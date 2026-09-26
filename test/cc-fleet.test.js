@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, rmSync } from 'node:fs';
+import { existsSync, readFileSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
@@ -251,7 +251,7 @@ function renderCcPage(data, { failFetch = false } = {}) {
   return { nodes, run: () => boot().then(() => new Promise((r) => setTimeout(r, 20))) };
 }
 
-const ccHtml = readFileSync(path.join(root, 'site', 'cc.html'), 'utf8');
+const ccHtml = readFileSync(path.join(root, 'cc.html'), 'utf8');
 
 test('the CC page fills every container the app writes to', async () => {
   const { nodes, run } = renderCcPage(CC_DATA);
@@ -260,7 +260,7 @@ test('the CC page fills every container the app writes to', async () => {
   const targets = [...new Set([...app.matchAll(/el\('([a-z0-9-]+)'\)/g)].map((m) => m[1]))];
   assert.ok(targets.length >= 8, `the app writes to ${targets.length} containers`);
   for (const id of targets) {
-    assert.match(ccHtml, new RegExp(`id="${id}"`), `site/cc.html has no #${id} for the app to fill`);
+    assert.match(ccHtml, new RegExp(`id="${id}"`), `cc.html has no #${id} for the app to fill`);
     const n = nodes.get(id);
     assert.ok(n, `the page never wrote to #${id}`);
     assert.ok((n.innerHTML || n.textContent).trim().length > 0, `#${id} rendered empty`);
@@ -362,6 +362,38 @@ test('the CC page shouts when the dataset is sample-generated, not measured', as
   assert.match(nodes.get('notice').innerHTML, /SAMPLE-GENERATED data, not a measurement/);
 });
 
+test('every relative URL both pages reference resolves to a file that exists', () => {
+  // A page can look perfect in a test that stubs fetch and still 404 in
+  // production, because a relative URL is resolved against the document, not
+  // against the module that uses it. This one hit exactly that: cc.html was
+  // written for the site root and then committed into site/, and the data URL
+  // resolved to /data.json, which GitHub Pages does not serve. So: resolve each
+  // page's references from where the page itself sits, and require the file.
+  for (const page of ['index.html', 'cc.html']) {
+    const html = readFileSync(path.join(root, page), 'utf8');
+    const refs = [...html.matchAll(/(?:src|href)="([^"#:]+)"/g)].map((m) => m[1]);
+    assert.ok(refs.length >= 2, `${page} references its assets`);
+    for (const ref of refs) {
+      const resolved = path.join(root, path.dirname(page), ref);
+      assert.ok(existsSync(resolved), `${page} references ${ref}, which resolves to ${path.relative(root, resolved)} — not a file`);
+    }
+  }
+
+  // And the same for the URL each page fetches, which lives in the module and
+  // is resolved against the document.
+  for (const [module, page] of [
+    ['site/app.js', 'index.html'],
+    ['site/cc-app.js', 'cc.html'],
+  ]) {
+    const src = readFileSync(path.join(root, module), 'utf8');
+    const dataUrl = /const DATA_URL = '([^']+)'/.exec(src);
+    assert.ok(dataUrl, `${module} declares where it fetches from`);
+    const resolved = path.join(root, path.dirname(page), dataUrl[1]);
+    assert.ok(existsSync(resolved), `${module} fetches ${dataUrl[1]}, which from ${page} resolves to a missing file`);
+    assert.doesNotMatch(dataUrl[1], /^\//, `${module} must not use a root-absolute path: the site is served from a subpath`);
+  }
+});
+
 test('the CC page carries no cookie, no analytics and no login', () => {
   for (const banned of [/googletagmanager/i, /gtag\(/i, /plausible/i, /segment\.io/i, /hotjar/i, /set-cookie/i, /<form/i]) {
     assert.doesNotMatch(ccHtml, banned, `the page must not ship ${banned}`);
@@ -376,7 +408,7 @@ test('nothing in the public tree leaks a host, an address or a credential', () =
     'data/cc-fleet-telemetry.json',
     'data/cc-fleet-metrics.json',
     'site/cc-data.json',
-    'site/cc.html',
+    'cc.html',
     'site/cc-app.js',
     'tools/cc-fleet-telemetry.mjs',
     'tools/export-cc-fleet.mjs',

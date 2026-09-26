@@ -221,7 +221,17 @@ test('the dashboard page fetches the committed data file and nothing else at run
   const js = readFileSync(path.join(root, 'site', 'app.js'), 'utf8');
   const fetches = [...js.matchAll(/fetch\(\s*([^,)]+)/g)].map((m) => m[1].trim());
   assert.deepEqual(fetches, ["DATA_URL"], 'exactly one fetch, through the DATA_URL constant');
-  assert.match(js, /const DATA_URL = 'data\.json'/, 'and it is the committed local file');
+  assert.match(js, /const DATA_URL = 'site\/data\.json'/, 'and it is the committed local file');
+  // Resolved the way a browser resolves it — against index.html at the site
+  // root, not against the module. A bare 'data.json' looks right in this file
+  // and 404s in production, which is how the live dashboard spent a release
+  // unable to load its own data.
+  const dataUrl = /const DATA_URL = '([^']+)'/.exec(js)[1];
+  assert.ok(
+    existsSync(path.resolve(root, path.dirname('index.html'), dataUrl)),
+    `${dataUrl} resolves, from index.html, to a file that exists`,
+  );
+  assert.doesNotMatch(js, /const DATA_URL = '\//, 'never a root-absolute path: the site is served from a subpath');
   const urls = [...(html + js).matchAll(/https?:\/\/[^\s"')]+/g)].map((m) => m[0]);
   for (const u of urls) {
     assert.ok(
