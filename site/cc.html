@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CC fleet burn — a 3-worker fleet against a 50,000-read/day ceiling</title>
+<meta name="description" content="Measured daily reads of a live 3-worker autonomous fleet against the Firestore free-tier 50,000 read/day ceiling: cost-equivalent, per-agent attribution, and the 24h coordinator boot count. No cookies, no analytics, no login.">
+<meta property="og:title" content="CC fleet burn — measured reads against a 50,000/day ceiling">
+<meta property="og:description" content="We pointed fleet-burn at the fleet that runs it. Every number here was measured on a live 3-worker fleet, and the part we cannot attribute is reported as unattrributed rather than guessed.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="site/styles.css">
+<link rel="canonical" href="https://magiautonomous.github.io/fleet-burn/cc.html">
+</head>
+<body>
+<header class="wrap">
+  <h1>CC fleet burn</h1>
+  <p class="pitch">fleet-burn pointed at the fleet that runs it. A 3-worker autonomous fleet on a Firestore <em>free tier</em> database, with a hard ceiling of 50,000 document reads a day and nothing to stop it going over. These are its own numbers, read out of its own logs, and the part it cannot explain is on the page too.</p>
+  <p class="badges">
+    <span class="badge" id="badge-dataclass">loading…</span>
+    <span class="badge" id="badge-state">—</span>
+    <span class="badge">no cookies</span>
+    <span class="badge">no analytics</span>
+    <span class="badge">no login</span>
+    <span class="badge" id="badge-window">—</span>
+  </p>
+</header>
+
+<main class="wrap" id="main">
+  <p class="notice" id="notice" hidden></p>
+
+  <section aria-labelledby="h-tiles">
+    <h2 id="h-tiles">The bill, in six numbers</h2>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section aria-labelledby="h-reads">
+    <h2 id="h-reads">Reads per day against the 50,000 ceiling</h2>
+    <p class="hint" id="reads-hint"></p>
+    <div class="chart" id="chart-reads" role="img" aria-labelledby="h-reads"></div>
+    <div class="legend" id="legend"></div>
+    <div class="scroll"><table id="table-days"></table></div>
+  </section>
+
+  <section aria-labelledby="h-boots">
+    <h2 id="h-boots">Coordinator boots per 24h</h2>
+    <p class="hint" id="boots-hint"></p>
+    <div class="chart" id="chart-boots" role="img" aria-labelledby="h-boots"></div>
+  </section>
+
+  <section aria-labelledby="h-agents">
+    <h2 id="h-agents">Per-agent attribution, including the part that has none</h2>
+    <div id="agents"></div>
+  </section>
+
+  <section aria-labelledby="h-provenance">
+    <h2 id="h-provenance">Measured, derived, or generated</h2>
+    <p class="hint">Every field above, and exactly how it was produced. Anything this page could not measure is left empty rather than filled in.</p>
+    <div class="scroll"><table id="table-provenance"></table></div>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How to reproduce this</h2>
+    <pre><code>node tools/cc-fleet-telemetry.mjs &lt;coordinator log&gt; --out data/cc-fleet-telemetry.json
+node tools/export-cc-fleet.mjs --telemetry data/cc-fleet-telemetry.json --out data/cc-fleet-metrics.json
+node bin/fleet-burn.js data/cc-fleet-metrics.json --cap-reads-per-day 50000
+node tools/build-cc-dashboard.mjs</code></pre>
+    <p class="hint">The first step keeps counters and timestamps and drops everything else, so the log never has to be published. The second emits the same <code>fleet-burn/metrics@1</code> document the CLI already reads — no second format. The last one runs the real library so this page and the CLI cannot disagree.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Data on this page: <span id="foot-dataclass">—</span>. Read counts and refusals are measured; estimated USD is a list-price counterfactual, not an invoice, because the free tier bills $0.</p>
+  <p>This page sets no cookies, loads no analytics and has no login. It is static files and one JSON file.</p>
+  <p><a href="index.html">fleet-burn dashboard</a> · <a href="https://github.com/magiautonomous/fleet-burn">Source on GitHub</a></p>
+</footer>
+
+<script type="module" src="site/cc-app.js"></script>
+</body>
+</html>

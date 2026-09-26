@@ -1,0 +1,613 @@
+{
+  "builtFrom": "data/cc-fleet-metrics.json",
+  "builtAt": "2026-09-26T08:21:08.620Z",
+  "dataClass": "REAL",
+  "fleet": "CC fleet — 3 autonomous workers + 1 coordinator on a Firestore free-tier database",
+  "window": {
+    "start": "2026-09-12T07:00:00.000Z",
+    "end": "2026-09-27T07:00:00.000Z",
+    "days": 15,
+    "activeDays": 15,
+    "activeStart": "2026-09-12",
+    "activeEnd": "2026-09-26"
+  },
+  "quota": {
+    "readsPerDay": 50000,
+    "dayKey": "A row is one Firestore quota day — the 24 hours from one daily read-quota reset to the next — keyed by the UTC date it began."
+  },
+  "priceCard": {
+    "id": "reference-2026-09",
+    "readUnitUsd": 4e-7
+  },
+  "totals": {
+    "storageReads": 750000,
+    "estimatedCostUsd": 0.3,
+    "costBreakdown": {
+      "storageUsd": 0.3,
+      "llmUsd": 0,
+      "tokenUsd": 0,
+      "source": "priceCard"
+    },
+    "burn": {
+      "days": 15,
+      "readsPerDay": 50000,
+      "usdPerDay": 0.02,
+      "llmCallsPerDay": 0,
+      "tokensPerDay": 0
+    },
+    "costPerOutcome": 0.0062499999999999995,
+    "tasksCompleted": 48
+  },
+  "budget": {
+    "caps": {
+      "capReadsPerDay": 50000,
+      "capUsdPerDay": null,
+      "capLlmCallsPerDay": null
+    },
+    "ok": true,
+    "checked": 15,
+    "peak": {
+      "readsPerDay": 50000,
+      "usdPerDay": 0.02,
+      "llmCallsPerDay": 0
+    },
+    "violations": []
+  },
+  "atCeiling": 15,
+  "overCap": 0,
+  "burnThrough": {
+    "measured": 12,
+    "of": 15,
+    "medianMinutes": 137.6,
+    "minMinutes": 80.3,
+    "maxMinutes": 175.5
+  },
+  "attribution": {
+    "attributedReads": 1116,
+    "unattributedReads": 748884,
+    "coverage": 0.001488000594314342,
+    "agents": [
+      {
+        "id": "Balthasar",
+        "name": "Balthasar",
+        "role": "coordinator",
+        "storageReads": 1116,
+        "estimatedCostUsd": 0.00044639999999999995,
+        "share": 0.001488
+      }
+    ]
+  },
+  "days": [
+    {
+      "date": "2026-09-12",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 2,
+      "costPerOutcome": 0.01,
+      "quotaRejections": 677,
+      "boots": 2,
+      "minutesToExhaust": null,
+      "observedHours": 19.91
+    },
+    {
+      "date": "2026-09-13",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 3,
+      "costPerOutcome": 0.006666666666666667,
+      "quotaRejections": 1164,
+      "boots": 0,
+      "minutesToExhaust": null,
+      "observedHours": 23.99
+    },
+    {
+      "date": "2026-09-14",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 7,
+      "costPerOutcome": 0.002857142857142857,
+      "quotaRejections": 977,
+      "boots": 7,
+      "minutesToExhaust": null,
+      "observedHours": 24
+    },
+    {
+      "date": "2026-09-15",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 4,
+      "costPerOutcome": 0.005,
+      "quotaRejections": 1023,
+      "boots": 6,
+      "minutesToExhaust": 175.5,
+      "observedHours": 23.96
+    },
+    {
+      "date": "2026-09-16",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 5,
+      "costPerOutcome": 0.004,
+      "quotaRejections": 1003,
+      "boots": 0,
+      "minutesToExhaust": 173.5,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-17",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 0,
+      "costPerOutcome": null,
+      "quotaRejections": 989,
+      "boots": 0,
+      "minutesToExhaust": 157.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-18",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 2,
+      "costPerOutcome": 0.01,
+      "quotaRejections": 1055,
+      "boots": 0,
+      "minutesToExhaust": 163.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-19",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 5,
+      "costPerOutcome": 0.004,
+      "quotaRejections": 1021,
+      "boots": 0,
+      "minutesToExhaust": 147.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-20",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 2,
+      "costPerOutcome": 0.01,
+      "quotaRejections": 1050,
+      "boots": 0,
+      "minutesToExhaust": 129.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-21",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 2,
+      "costPerOutcome": 0.01,
+      "quotaRejections": 1043,
+      "boots": 0,
+      "minutesToExhaust": 145.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-22",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 6,
+      "costPerOutcome": 0.0033333333333333335,
+      "quotaRejections": 1055,
+      "boots": 0,
+      "minutesToExhaust": 115.6,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-23",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 5,
+      "costPerOutcome": 0.004,
+      "quotaRejections": 1070,
+      "boots": 0,
+      "minutesToExhaust": 123.7,
+      "observedHours": 23.97
+    },
+    {
+      "date": "2026-09-24",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 3,
+      "costPerOutcome": 0.006666666666666667,
+      "quotaRejections": 1031,
+      "boots": 1,
+      "minutesToExhaust": 106.2,
+      "observedHours": 23.96
+    },
+    {
+      "date": "2026-09-25",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 1,
+      "costPerOutcome": 0.02,
+      "quotaRejections": 1053,
+      "boots": 0,
+      "minutesToExhaust": 126.2,
+      "observedHours": 23.99
+    },
+    {
+      "date": "2026-09-26",
+      "storageReads": 50000,
+      "estimatedCostUsd": 0.02,
+      "completedTasks": 1,
+      "costPerOutcome": 0.02,
+      "quotaRejections": 1,
+      "boots": 0,
+      "minutesToExhaust": 80.3,
+      "observedHours": 1.34
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-09-12",
+      "kind": "coordinatorBoots",
+      "count": 2,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-12",
+      "kind": "observedHours",
+      "count": 19.91,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-12",
+      "kind": "quotaRejections",
+      "count": 677,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-13",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-13",
+      "kind": "observedHours",
+      "count": 23.99,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-13",
+      "kind": "quotaRejections",
+      "count": 1164,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-14",
+      "kind": "coordinatorBoots",
+      "count": 7,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-14",
+      "kind": "observedHours",
+      "count": 24,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-14",
+      "kind": "quotaRejections",
+      "count": 977,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-15",
+      "kind": "coordinatorBoots",
+      "count": 6,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-15",
+      "kind": "minutesToExhaust",
+      "count": 175.5,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-15",
+      "kind": "observedHours",
+      "count": 23.96,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-15",
+      "kind": "quotaRejections",
+      "count": 1023,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "minutesToExhaust",
+      "count": 173.5,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-16",
+      "kind": "quotaRejections",
+      "count": 1003,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-17",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-17",
+      "kind": "minutesToExhaust",
+      "count": 157.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-17",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-17",
+      "kind": "quotaRejections",
+      "count": 989,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-18",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-18",
+      "kind": "minutesToExhaust",
+      "count": 163.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-18",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-18",
+      "kind": "quotaRejections",
+      "count": 1055,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "minutesToExhaust",
+      "count": 147.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "quotaRejections",
+      "count": 1021,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "minutesToExhaust",
+      "count": 129.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "quotaRejections",
+      "count": 1050,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-21",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-21",
+      "kind": "minutesToExhaust",
+      "count": 145.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-21",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-21",
+      "kind": "quotaRejections",
+      "count": 1043,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-22",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-22",
+      "kind": "minutesToExhaust",
+      "count": 115.6,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-22",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-22",
+      "kind": "quotaRejections",
+      "count": 1055,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-23",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-23",
+      "kind": "minutesToExhaust",
+      "count": 123.7,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-23",
+      "kind": "observedHours",
+      "count": 23.97,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-23",
+      "kind": "quotaRejections",
+      "count": 1070,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "coordinatorBoots",
+      "count": 1,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "minutesToExhaust",
+      "count": 106.2,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "observedHours",
+      "count": 23.96,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-24",
+      "kind": "quotaRejections",
+      "count": 1031,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-25",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-25",
+      "kind": "minutesToExhaust",
+      "count": 126.2,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-25",
+      "kind": "observedHours",
+      "count": 23.99,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-25",
+      "kind": "quotaRejections",
+      "count": 1053,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    },
+    {
+      "date": "2026-09-26",
+      "kind": "coordinatorBoots",
+      "count": 0,
+      "note": "process starts on the coordinator host"
+    },
+    {
+      "date": "2026-09-26",
+      "kind": "minutesToExhaust",
+      "count": 80.3,
+      "note": "minutes from the quota reset to the first refusal, measured only where a successful poll lands within 10 minutes before it"
+    },
+    {
+      "date": "2026-09-26",
+      "kind": "observedHours",
+      "count": 1.34,
+      "note": "hours of coordinator-log coverage in this quota day"
+    },
+    {
+      "date": "2026-09-26",
+      "kind": "quotaRejections",
+      "count": 1,
+      "note": "operations refused with RESOURCE_EXHAUSTED on the free daily read quota"
+    }
+  ],
+  "provenance": {
+    "source": "MEASURED - counters parsed out of the CC fleet coordinator log on the host that runs the coordinator.",
+    "pollAttempts": "MEASURED - one coordinator board poll every 120s, logged per attempt as \"board poll: N doc(s)\" or a quota rejection.",
+    "pollDocReads": "MEASURED - one read unit per successful poll plus one per document it returned. Rejected attempts cost nothing: the API refuses them before reading anything.",
+    "quotaRejections": "MEASURED - operations the API refused with RESOURCE_EXHAUSTED on the \"Free daily read units per project (free tier database)\" quota.",
+    "minutesToExhaust": "MEASURED - minutes from the quota reset to the first poll rejection, reported only when a successful poll lands within 10 minutes before it.",
+    "boots": "MEASURED - one process start per \"registered in agents/<id> as Online\" line.",
+    "tasksCompleted": "MEASURED - one per task transition to Done on the board.",
+    "observedHours": "MEASURED - span of timestamps this day has in the scanned log, clipped to the day.",
+    "sanitized": "YES - this document carries counters, timestamps and agent ids only. No task titles, board ids, hostnames or paths are copied out of the log.",
+    "window": "MEASURED - the span of quota days the scanned log covers, and the last timestamp it contains. The final day may be partial; the committed dataset is a fixed snapshot of that moment.",
+    "dayKey": "A row is one Firestore quota day — the 24 hours from one daily read-quota reset to the next — keyed by the UTC date it began.",
+    "storageReads": "LOWER BOUND (MEASURED) - recorded at the 50,000-read free-tier daily quota on the 15 of 15 days the API refused the fleet's reads. Consumption was at least that; the exact count is not observable from the SDK.",
+    "attributedShare": "MEASURED - instrumented consumers on the exporting host account for 1,116 of 750,000 recorded reads (0.15%). The remainder is unattributed: the requests that consumed it are not made by the code that logged this window.",
+    "burnThrough": "MEASURED on 12 of 15 days. Unmeasured days are left null rather than estimated.",
+    "priceUsd": "ESTIMATED - reference price card in the repo ($0.40 per 1M Firestore document reads). The free tier is unmetered and bills $0; this is the counterfactual cost of the same reads on a pay-as-you-go plan."
+  },
+  "pricing": {
+    "currency": "USD",
+    "note": "Reads only: this fleet meters no tokens through fleet-burn. Estimated with the reference price card, so USD here is a counterfactual, not an invoice."
+  },
+  "referencePriceCard": "reference-2026-09"
+}
