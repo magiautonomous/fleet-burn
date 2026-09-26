@@ -1,0 +1,648 @@
+{
+  "builtFrom": "data/fleet-sample.json",
+  "dataClass": "REAL",
+  "fleet": "magi agent fleet (3 cores, 1 host, Firestore free tier)",
+  "window": {
+    "start": "2026-09-11T00:00:00.000Z",
+    "end": "2026-09-26T23:59:59.999Z",
+    "days": 16,
+    "activeDays": 12,
+    "activeStart": "2026-09-14",
+    "activeEnd": "2026-09-26"
+  },
+  "card": {
+    "id": "reference-2026-09",
+    "readUnitUsd": 4e-7,
+    "callUnitUsd": 0,
+    "perMillion": {
+      "tokensIn": 3,
+      "tokensOut": 15,
+      "tokensReasoning": 15,
+      "tokensCacheRead": 0.3,
+      "tokensCacheWrite": 3.75
+    }
+  },
+  "coverage": 1,
+  "totals": {
+    "storageReads": 228,
+    "llmCalls": 2029,
+    "tokensTotal": 121703159,
+    "tokensIn": 4173856,
+    "tokensOut": 1031938,
+    "tokensCacheRead": 116392251,
+    "estimatedCostUsd": 64.4951145,
+    "costBreakdown": {
+      "storageUsd": 0.000091,
+      "llmUsd": 0,
+      "tokenUsd": 64.495023,
+      "source": "priceCard"
+    },
+    "burn": {
+      "days": 12,
+      "readsPerDay": 19,
+      "usdPerDay": 5.374592875,
+      "llmCallsPerDay": 169.08333333333334,
+      "tokensPerDay": 10141929.916666666
+    },
+    "costPerOutcome": 0.4849256729323308,
+    "tasksCompleted": 133,
+    "tasksAttributed": 34,
+    "coordinationReads": 87
+  },
+  "budget": {
+    "caps": {
+      "capReadsPerDay": 50000,
+      "capUsdPerDay": 25,
+      "capLlmCallsPerDay": null
+    },
+    "ok": true,
+    "checked": 23,
+    "peak": {
+      "readsPerDay": 39,
+      "usdPerDay": 11.9883486,
+      "llmCallsPerDay": 370
+    },
+    "violations": []
+  },
+  "days": [
+    {
+      "date": "2026-09-11",
+      "storageReads": 0,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0,
+      "completedTasks": 1,
+      "tasksStarted": 0,
+      "taskAttributedReads": 0,
+      "costPerOutcome": 0
+    },
+    {
+      "date": "2026-09-12",
+      "storageReads": 0,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0,
+      "completedTasks": 43,
+      "tasksStarted": 0,
+      "taskAttributedReads": 0,
+      "costPerOutcome": 0
+    },
+    {
+      "date": "2026-09-13",
+      "storageReads": 0,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0,
+      "completedTasks": 7,
+      "tasksStarted": 0,
+      "taskAttributedReads": 0,
+      "costPerOutcome": 0
+    },
+    {
+      "date": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 370,
+      "tokensTotal": 22916793,
+      "estimatedCostUsd": 11.9883486,
+      "completedTasks": 19,
+      "tasksStarted": 6,
+      "taskAttributedReads": 0,
+      "costPerOutcome": 0.6309657157894737
+    },
+    {
+      "date": "2026-09-15",
+      "storageReads": 16,
+      "llmCalls": 214,
+      "tokensTotal": 10317488,
+      "estimatedCostUsd": 5.865344800000001,
+      "completedTasks": 28,
+      "tasksStarted": 4,
+      "taskAttributedReads": 14,
+      "costPerOutcome": 0.20947660000000004
+    },
+    {
+      "date": "2026-09-16",
+      "storageReads": 19,
+      "llmCalls": 110,
+      "tokensTotal": 5892618,
+      "estimatedCostUsd": 3.2178927999999996,
+      "completedTasks": 7,
+      "tasksStarted": 2,
+      "taskAttributedReads": 6,
+      "costPerOutcome": 0.45969897142857136
+    },
+    {
+      "date": "2026-09-17",
+      "storageReads": 0,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0,
+      "completedTasks": 1,
+      "tasksStarted": 0,
+      "taskAttributedReads": 0,
+      "costPerOutcome": 0
+    },
+    {
+      "date": "2026-09-18",
+      "storageReads": 32,
+      "llmCalls": 239,
+      "tokensTotal": 18931769,
+      "estimatedCostUsd": 9.190379,
+      "completedTasks": 2,
+      "tasksStarted": 2,
+      "taskAttributedReads": 24,
+      "costPerOutcome": 4.5951895
+    },
+    {
+      "date": "2026-09-19",
+      "storageReads": 15,
+      "llmCalls": 219,
+      "tokensTotal": 12781777,
+      "estimatedCostUsd": 6.7419474,
+      "completedTasks": 5,
+      "tasksStarted": 4,
+      "taskAttributedReads": 5,
+      "costPerOutcome": 1.34838948
+    },
+    {
+      "date": "2026-09-20",
+      "storageReads": 7,
+      "llmCalls": 95,
+      "tokensTotal": 3874295,
+      "estimatedCostUsd": 2.1768286,
+      "completedTasks": 3,
+      "tasksStarted": 2,
+      "taskAttributedReads": 5,
+      "costPerOutcome": 0.7256095333333333
+    },
+    {
+      "date": "2026-09-21",
+      "storageReads": 8,
+      "llmCalls": 55,
+      "tokensTotal": 3236028,
+      "estimatedCostUsd": 1.8005095999999998,
+      "completedTasks": 2,
+      "tasksStarted": 1,
+      "taskAttributedReads": 4,
+      "costPerOutcome": 0.9002547999999999
+    },
+    {
+      "date": "2026-09-22",
+      "storageReads": 28,
+      "llmCalls": 272,
+      "tokensTotal": 13569736,
+      "estimatedCostUsd": 7.256840800000001,
+      "completedTasks": 4,
+      "tasksStarted": 6,
+      "taskAttributedReads": 22,
+      "costPerOutcome": 1.8142102000000002
+    },
+    {
+      "date": "2026-09-23",
+      "storageReads": 34,
+      "llmCalls": 217,
+      "tokensTotal": 14356866,
+      "estimatedCostUsd": 6.989990799999999,
+      "completedTasks": 5,
+      "tasksStarted": 3,
+      "taskAttributedReads": 12,
+      "costPerOutcome": 1.3979981599999998
+    },
+    {
+      "date": "2026-09-24",
+      "storageReads": 39,
+      "llmCalls": 143,
+      "tokensTotal": 9442998,
+      "estimatedCostUsd": 5.38926,
+      "completedTasks": 4,
+      "tasksStarted": 2,
+      "taskAttributedReads": 22,
+      "costPerOutcome": 1.347315
+    },
+    {
+      "date": "2026-09-25",
+      "storageReads": 22,
+      "llmCalls": 95,
+      "tokensTotal": 6382791,
+      "estimatedCostUsd": 3.8777689,
+      "completedTasks": 1,
+      "tasksStarted": 1,
+      "taskAttributedReads": 21,
+      "costPerOutcome": 3.8777689
+    },
+    {
+      "date": "2026-09-26",
+      "storageReads": 8,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0.0000032,
+      "completedTasks": 1,
+      "tasksStarted": 1,
+      "taskAttributedReads": 6,
+      "costPerOutcome": 0.0000032
+    }
+  ],
+  "agents": [
+    {
+      "id": "Balthasar",
+      "name": "Balthasar",
+      "role": "core",
+      "storageReads": 228,
+      "llmCalls": 2029,
+      "tokensTotal": 121703159,
+      "estimatedCostUsd": 64.4951145,
+      "taskCount": 34,
+      "coordinationReads": 87
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SzUwbkGvAWi3i6WBufnq",
+      "title": "Audit + harden worker systemd units: verify cc-worker.service health on all hosts, fix the .env loader gap, and adopt th",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 134,
+      "tokensTotal": 9731608,
+      "estimatedCostUsd": 5.2538903999999995
+    },
+    {
+      "id": "hQvpq8SpyzajUrHyVm9G",
+      "title": "CC dashboard v3: wire the funding slot + task pipeline to LIVE Firestore (real balance, open-task backlog view)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 58,
+      "tokensTotal": 2858408,
+      "estimatedCostUsd": 1.4831856
+    },
+    {
+      "id": "oFN3w4CFMULRsaWVWHQm",
+      "title": "Add an early-access waitlist to the marketing surface: email capture form on the landing, Firestore leads collection, an",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 18,
+      "tokensTotal": 548537,
+      "estimatedCostUsd": 0.3782022
+    },
+    {
+      "id": "aQPrIERSxmhtBfzvSGMZ",
+      "title": "[archived] Add an early-access waitlist to the marketing surface: email capture form on the landing, Firestore leads collection, an",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 48,
+      "tokensTotal": 2560097,
+      "estimatedCostUsd": 1.4096790000000001
+    },
+    {
+      "id": "Ym0RccDKrnNodDbzPshO",
+      "title": "Ship the waitlist form to the live landing page: merge feat/early-access-waitlist to origin/main, verify /api/waitlist r",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 29,
+      "tokensTotal": 945299,
+      "estimatedCostUsd": 0.6359298
+    },
+    {
+      "id": "LCuaoNAirDnCqGQSLD1F",
+      "title": "Verify the x402 funding rail is LIVE end-to-end: chargeable quote + reconcile CLI + landing Fund CTA",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-14",
+      "storageReads": 0,
+      "llmCalls": 83,
+      "tokensTotal": 6272844,
+      "estimatedCostUsd": 2.8274616
+    },
+    {
+      "id": "Kh7NMhz4SQ1DwVGqqtt6",
+      "title": "Reconcile open PRs on CORE: sweep the 15 stale open PRs on github.com/magiautonomous/CORE — get #52 (standing weekly dig",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-15",
+      "storageReads": 0,
+      "llmCalls": 34,
+      "tokensTotal": 1252987,
+      "estimatedCostUsd": 0.8313185999999999
+    },
+    {
+      "id": "XUP4x4SCSABV3xKaCT9d",
+      "title": "Worker boot deps hardening: cc-worker-start.sh must sync node_modules on deploy so pulling CORE updates never crash-loop",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-15",
+      "storageReads": 0,
+      "llmCalls": 61,
+      "tokensTotal": 2676184,
+      "estimatedCostUsd": 1.6043615999999998
+    },
+    {
+      "id": "zkvJxwWK8Hi8Gjqby9H2",
+      "title": "Boot-guard regression test: prove the npm-ci guard fails closed",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-15",
+      "storageReads": 10,
+      "llmCalls": 83,
+      "tokensTotal": 5098085,
+      "estimatedCostUsd": 2.6586118
+    },
+    {
+      "id": "udCKpx7ZMgZyudQPIFyc",
+      "title": "Eliminate the [redacted-path] cc-worker-start.sh divergence: make the daemon boot the repo copy directly, or auto-sync on",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-15",
+      "storageReads": 4,
+      "llmCalls": 36,
+      "tokensTotal": 1290232,
+      "estimatedCostUsd": 0.771052
+    },
+    {
+      "id": "y0tYRO9rKa0OCdZ1Ovsi",
+      "title": "Self-improve: audit coordinator code (server.js, supervisor.js, cc-ops.js) for reliability gaps — error handling, edge c",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-16",
+      "storageReads": 2,
+      "llmCalls": 73,
+      "tokensTotal": 3950844,
+      "estimatedCostUsd": 1.9308224
+    },
+    {
+      "id": "g9LODdzOFo7dNTYwKqTk",
+      "title": "Add sitemap.xml + robots.txt to the live landing site for SEO discovery",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-20",
+      "storageReads": 1,
+      "llmCalls": 46,
+      "tokensTotal": 1579586,
+      "estimatedCostUsd": 0.9768832000000001
+    },
+    {
+      "id": "usLwSnQ2Jqv6q8QUAbGq",
+      "title": "Add per-page OG/Twitter/canonical meta + JSON-LD structured data to blog posts and one-pager",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-16",
+      "storageReads": 4,
+      "llmCalls": 37,
+      "tokensTotal": 1941774,
+      "estimatedCostUsd": 1.2870652
+    },
+    {
+      "id": "86F95MQU4PLvMcUyAYmX",
+      "title": "Re: [CC Fleet Alert] 1 issue: 1 quota freeze",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-18",
+      "storageReads": 5,
+      "llmCalls": 65,
+      "tokensTotal": 4217403,
+      "estimatedCostUsd": 2.159819
+    },
+    {
+      "id": "dtYHTynTmIlyWLXcU7Ka",
+      "title": "Build the x402 pay-per-request resource server (productize fleet-status as a paid API)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-18",
+      "storageReads": 19,
+      "llmCalls": 174,
+      "tokensTotal": 14714366,
+      "estimatedCostUsd": 7.030556799999999
+    },
+    {
+      "id": "5DEwl20YEqZwMRTQgyQI",
+      "title": "Publish the live x402 paid API as a buyer-facing product surface on the fleet-status site",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-19",
+      "storageReads": 3,
+      "llmCalls": 53,
+      "tokensTotal": 3460447,
+      "estimatedCostUsd": 1.8169974
+    },
+    {
+      "id": "MfXjtG87by6xlotKX6ju",
+      "title": "Close the funnel: link the marketing homepage's 'Fund the fleet (x402)' card to the live paid-API buyer page and stable",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-19",
+      "storageReads": 1,
+      "llmCalls": 47,
+      "tokensTotal": 1846778,
+      "estimatedCostUsd": 0.9131128
+    },
+    {
+      "id": "nYvQtbdtqSboAK73jU9z",
+      "title": "Publish a roadmap/changelog narrative on the marketing homepage presenting the live x402 paid API as the first shipped p",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-19",
+      "storageReads": 1,
+      "llmCalls": 42,
+      "tokensTotal": 1716727,
+      "estimatedCostUsd": 0.8861782
+    },
+    {
+      "id": "g7DqF6Y1roGNHEZs3XWN",
+      "title": "Build a first-sale runbook + pay-to-receipt verification tool for the x402 fleet-status API",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-19",
+      "storageReads": 0,
+      "llmCalls": 77,
+      "tokensTotal": 5757825,
+      "estimatedCostUsd": 3.125655
+    },
+    {
+      "id": "mNcN1HXNjVZWPoUjhlJT",
+      "title": "Retire the legacy Casper x402 quick-tunnel + local fleet-serve daemon (redundant since Vercel)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-20",
+      "storageReads": 4,
+      "llmCalls": 49,
+      "tokensTotal": 2294709,
+      "estimatedCostUsd": 1.1999446
+    },
+    {
+      "id": "qNebSbgc7XE4xQQGAc9O",
+      "title": "Cross-link the two live product surfaces (both ways) and publish a changelog on the fleet-status site",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-21",
+      "storageReads": 4,
+      "llmCalls": 55,
+      "tokensTotal": 3236028,
+      "estimatedCostUsd": 1.8005079999999998
+    },
+    {
+      "id": "3jtll5WPDPhzOLtgvFjG",
+      "title": "Make the fleet-status site machine-discoverable: sitemap + RSS changelog feed + SEO metadata",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-23",
+      "storageReads": 3,
+      "llmCalls": 57,
+      "tokensTotal": 2830679,
+      "estimatedCostUsd": 1.6198302
+    },
+    {
+      "id": "TsN8RerKLSPMeNgTBu53",
+      "title": "Test",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 1,
+      "llmCalls": 24,
+      "tokensTotal": 469837,
+      "estimatedCostUsd": 0.3520498
+    },
+    {
+      "id": "IdfT7peN6rOdKWSGPZOh",
+      "title": "Grant the fleet SA the Cloud Monitoring reader role (unblocks the read-budget attribution tool)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 2,
+      "llmCalls": 38,
+      "tokensTotal": 1124650,
+      "estimatedCostUsd": 0.6823292000000001
+    },
+    {
+      "id": "g97qKOnNTqXZR1wmu3JB",
+      "title": "Add a privacy-friendly page-view analytics beacon to the fleet-status site (no GA, no cookies, no new services)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 4,
+      "llmCalls": 40,
+      "tokensTotal": 1972165,
+      "estimatedCostUsd": 1.356391
+    },
+    {
+      "id": "HGdmngqvVcIKkA3oQR1a",
+      "title": "Extend the first-party analytics beacon to the landing/marketing surface (api/view counts for the funnel entry)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 4,
+      "llmCalls": 45,
+      "tokensTotal": 2189269,
+      "estimatedCostUsd": 1.239571
+    },
+    {
+      "id": "9Db8yYkc4JQzE3jAVjqr",
+      "title": "Publish the fleet blog posts to dev.to with canonical links (get third-party mentions off 0)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 6,
+      "llmCalls": 52,
+      "tokensTotal": 2814551,
+      "estimatedCostUsd": 1.4239914
+    },
+    {
+      "id": "cm7G2uwubmCsFpT59lFe",
+      "title": "x402 paid API consumer docs: reference page with auth flow + curl examples, linked from both surfaces",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-22",
+      "storageReads": 5,
+      "llmCalls": 73,
+      "tokensTotal": 4999264,
+      "estimatedCostUsd": 2.202506
+    },
+    {
+      "id": "nBn1gBAw5pxytJpD1HcR",
+      "title": "Draft the community launch pack: Show HN + Reddit (r/selfhosted, r/SideProject) + X announcement posts (get third-party",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-23",
+      "storageReads": 2,
+      "llmCalls": 71,
+      "tokensTotal": 4360773,
+      "estimatedCostUsd": 2.339795
+    },
+    {
+      "id": "lCfcdVVgzDNC3P7dQotv",
+      "title": "Submit Magi to developer-friendly directories/awesome-lists (distribution: lifts third-party mentions > 0)",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-23",
+      "storageReads": 7,
+      "llmCalls": 89,
+      "tokensTotal": 7165414,
+      "estimatedCostUsd": 3.0303568
+    },
+    {
+      "id": "XcFedHKZ8jqRcThTrJms",
+      "title": "Draft next dev.to post #4: read-freeze forensics — how the fleet found and killed a 50k-read/day Firestore burner (conti",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-24",
+      "storageReads": 4,
+      "llmCalls": 66,
+      "tokensTotal": 4041002,
+      "estimatedCostUsd": 2.0676724
+    },
+    {
+      "id": "z0mXc5cYthruJB33H3Dv",
+      "title": "Re: Email reading — CC mailbox loop is live",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-24",
+      "storageReads": 18,
+      "llmCalls": 77,
+      "tokensTotal": 5401996,
+      "estimatedCostUsd": 3.3215807999999996
+    },
+    {
+      "id": "ittTlXkFrPtPieFQrKun",
+      "title": "Make worker dependency boot checks content-based to avoid active-session cold boots",
+      "agent": "Balthasar",
+      "status": "Done",
+      "day": "2026-09-25",
+      "storageReads": 21,
+      "llmCalls": 95,
+      "tokensTotal": 6382791,
+      "estimatedCostUsd": 3.8777684999999997
+    },
+    {
+      "id": "tGptJ2vpaLanET3rZKWK",
+      "title": "PRODUCT v0.1: fleet-burn — a public cost/usage meter for agent fleets, shipped live on GitHub Pages",
+      "agent": "Balthasar",
+      "status": "In Progress",
+      "day": "2026-09-26",
+      "storageReads": 6,
+      "llmCalls": 0,
+      "tokensTotal": 0,
+      "estimatedCostUsd": 0.0000024
+    }
+  ],
+  "provenance": {
+    "storageReads": "REAL - counted from the coordinator poll log line \"board poll: N doc(s)\" (one doc read per card scanned).",
+    "tokens": "REAL - per-session counters from the agent runtime session store, joined to board task ids by session id.",
+    "coordinationReads": "REAL - poll reads with no task in flight (idle coordination overhead), charged to the agent, not to a task.",
+    "storageReadsPerTask": "REAL - poll reads whose timestamp fell inside that task in-flight window.",
+    "llmCalls": "REAL - counted assistant turns in the agent runtime session store (one assistant message = one LLM call).",
+    "completions": "REAL - the maintained memory/board-completions counter.",
+    "costUsd": "ESTIMATED - reference price card; the fleet gateway is unmetered and reports $0.",
+    "sessionsJoined": "33 of 35 logged task runs matched a session with token counters"
+  },
+  "pricing": {
+    "currency": "USD",
+    "note": "Estimated with fleet-burn reference price card; the fleet gateway reports $0 (metered), so costUsd is a counterfactual at list prices."
+  }
+}

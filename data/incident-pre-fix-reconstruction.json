@@ -1,0 +1,574 @@
+{
+  "schema": "fleet-burn/metrics@1",
+  "dataClass": "SYNTHETIC",
+  "fleet": "magi agent fleet, pre-fix replay (3 cores, 1 host, Firestore free tier)",
+  "window": {
+    "start": "2026-09-15T00:00:00.000Z",
+    "end": "2026-09-21T23:59:59.999Z",
+    "days": 7
+  },
+  "pricing": {
+    "currency": "USD",
+    "note": "No token usage in this replay; the whole bill is storage reads."
+  },
+  "budget": {
+    "capReadsPerDay": 50000,
+    "capUsdPerDay": 1,
+    "rationale": "50,000 Firestore free-tier document reads/day; the USD cap is a demo value, not a provider limit."
+  },
+  "totals": {
+    "storageReads": 1206240,
+    "llmCalls": 0,
+    "tokensIn": 0,
+    "tokensOut": 0,
+    "tasksAttributed": 21,
+    "tasksCompleted": 0,
+    "pollEvents": 15120,
+    "coordinationReads": 26880
+  },
+  "days": [
+    {
+      "date": "2026-09-15",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-16",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-17",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-18",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-19",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-20",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    },
+    {
+      "date": "2026-09-21",
+      "storageReads": 172320,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensCacheRead": 0,
+      "completedTasks": 0,
+      "agentTasksStarted": 3
+    }
+  ],
+  "agents": [
+    {
+      "id": "Casper",
+      "name": "Casper",
+      "role": "core",
+      "storageReads": 56160,
+      "coordinationReads": 0,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tasks": 7,
+      "days": [
+        {
+          "date": "2026-09-15",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-16",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-17",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-18",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-19",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-20",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-21",
+          "storageReads": 56160
+        }
+      ]
+    },
+    {
+      "id": "Balthasar",
+      "name": "Balthasar",
+      "role": "core",
+      "storageReads": 56160,
+      "coordinationReads": 0,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tasks": 7,
+      "days": [
+        {
+          "date": "2026-09-15",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-16",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-17",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-18",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-19",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-20",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-21",
+          "storageReads": 56160
+        }
+      ]
+    },
+    {
+      "id": "Melchior",
+      "name": "Melchior",
+      "role": "core",
+      "storageReads": 56160,
+      "coordinationReads": 0,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tasks": 7,
+      "days": [
+        {
+          "date": "2026-09-15",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-16",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-17",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-18",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-19",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-20",
+          "storageReads": 56160
+        },
+        {
+          "date": "2026-09-21",
+          "storageReads": 56160
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "inc-board-poll-history@2026-09-15",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-15T00:00:00.000Z",
+      "endedAt": "2026-09-15T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-15",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-15T00:00:00.000Z",
+      "endedAt": "2026-09-15T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-15",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-15T00:00:00.000Z",
+      "endedAt": "2026-09-15T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-16",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-16T00:00:00.000Z",
+      "endedAt": "2026-09-16T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-16",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-16T00:00:00.000Z",
+      "endedAt": "2026-09-16T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-16",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-16T00:00:00.000Z",
+      "endedAt": "2026-09-16T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-17",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-17T00:00:00.000Z",
+      "endedAt": "2026-09-17T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-17",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-17T00:00:00.000Z",
+      "endedAt": "2026-09-17T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-17",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-17T00:00:00.000Z",
+      "endedAt": "2026-09-17T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-18",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-18T00:00:00.000Z",
+      "endedAt": "2026-09-18T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-18",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-18T00:00:00.000Z",
+      "endedAt": "2026-09-18T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-18",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-18T00:00:00.000Z",
+      "endedAt": "2026-09-18T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-19",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-19T00:00:00.000Z",
+      "endedAt": "2026-09-19T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-19",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-19T00:00:00.000Z",
+      "endedAt": "2026-09-19T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-19",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-19T00:00:00.000Z",
+      "endedAt": "2026-09-19T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-20",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-20T00:00:00.000Z",
+      "endedAt": "2026-09-20T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-20",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-20T00:00:00.000Z",
+      "endedAt": "2026-09-20T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-20",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-20T00:00:00.000Z",
+      "endedAt": "2026-09-20T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    },
+    {
+      "id": "inc-board-poll-history@2026-09-21",
+      "title": "board poll: query the full task history instead of live cards",
+      "agent": "Casper",
+      "status": "Done",
+      "startedAt": "2026-09-21T00:00:00.000Z",
+      "endedAt": "2026-09-21T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 84240
+    },
+    {
+      "id": "inc-reclaim-churn@2026-09-21",
+      "title": "re-claim churn: re-read every card in flight on each poll cycle",
+      "agent": "Melchior",
+      "status": "Done",
+      "startedAt": "2026-09-21T00:00:00.000Z",
+      "endedAt": "2026-09-21T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 50544
+    },
+    {
+      "id": "inc-retry-storm@2026-09-21",
+      "title": "retry storm after RESOURCE_EXHAUSTED: 10 min of retries per worker",
+      "agent": "Balthasar",
+      "status": "Blocked",
+      "startedAt": "2026-09-21T00:00:00.000Z",
+      "endedAt": "2026-09-21T23:59:59.000Z",
+      "durationS": 86340,
+      "llmCalls": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensReasoning": 0,
+      "tokensCacheRead": 0,
+      "storageReads": 33696
+    }
+  ],
+  "reconstruction": {
+    "kind": "configuration-replay",
+    "computed": {
+      "readsPerPoll": 78,
+      "pollIntervalS": 120,
+      "pollsPerDay": 720,
+      "workers": 3,
+      "readsPerWorkerPerDay": 56160,
+      "workerReadsPerDay": 168480,
+      "coordinationReadsPerDay": 3840,
+      "totalReadsPerDay": 172320,
+      "cap": 50000,
+      "timesCap": 3.446,
+      "exhaustsCapAtUtc": "~07:00Z (if all three workers leak simultaneously)"
+    },
+    "measured_cited": {
+      "observedFreezeAtUtc": "09:09Z",
+      "resourceExhaustedPerDay": [
+        941,
+        2553
+      ],
+      "resourceExhaustedPerWeek": 8532,
+      "note": "Observed on the fleet, cited from the read-budget incident write-up. The replay exhausts the cap earlier than 09:09Z, so the leak was not at full three-worker concurrency on the day it was measured. Unreconciled on purpose: closing it needs the Cloud Monitoring export that is still operator-gated."
+    }
+  },
+  "provenance": {
+    "storageReads": "COMPUTED - 78 docs/poll x 720 polls/day x 3 workers. Not measured.",
+    "tokens": "n/a - this replay is a storage-read incident only.",
+    "completions": "COMPUTED as 0 - the fleet completed nothing while the budget was frozen.",
+    "purpose": "Demo input for the budget guard. Use data/fleet-sample.json for real data."
+  }
+}

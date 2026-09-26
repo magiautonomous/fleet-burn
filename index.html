@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fleet-burn — cost and usage meter for agent fleets</title>
+<meta name="description" content="fleet-burn attributes storage reads, LLM calls, tokens and estimated USD to the agent and task that caused them, and fails a build when a daily budget cap is blown. Zero dependencies.">
+<meta property="og:title" content="fleet-burn — cost and usage meter for agent fleets">
+<meta property="og:description" content="Token tracing tools show you what a model call cost. None of them show what coordination cost. fleet-burn does, and it fails your build when you go over.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="site/styles.css">
+<link rel="canonical" href="https://magiautonomous.github.io/fleet-burn/">
+</head>
+<body>
+<header class="wrap">
+  <h1>fleet-burn</h1>
+  <p class="pitch">Token tracers show what a model call cost. None of them show what <em>coordination</em> cost. fleet-burn attributes reads, calls, tokens and estimated USD to the agent and task that caused them — and exits non-zero when a daily cap is blown.</p>
+  <p class="badges">
+    <span class="badge" id="badge-dataclass">loading…</span>
+    <span class="badge">zero dependencies</span>
+    <span class="badge">MIT</span>
+    <span class="badge" id="badge-window">—</span>
+  </p>
+</header>
+
+<main class="wrap" id="main">
+  <p class="notice" id="notice" hidden></p>
+
+  <section aria-labelledby="h-totals">
+    <h2 id="h-totals">Totals</h2>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section aria-labelledby="h-budget">
+    <h2 id="h-budget">Budget caps</h2>
+    <div id="budget"></div>
+  </section>
+
+  <section aria-labelledby="h-burn">
+    <h2 id="h-burn">Burn over time</h2>
+    <p class="hint" id="burn-hint"></p>
+    <div class="chart" id="chart-burn" role="img" aria-labelledby="h-burn"></div>
+    <div class="legend" id="legend"></div>
+    <div class="scroll"><table id="table-days"></table></div>
+  </section>
+
+  <section aria-labelledby="h-agents">
+    <h2 id="h-agents">Most expensive agents</h2>
+    <div id="agents"></div>
+  </section>
+
+  <section aria-labelledby="h-cpo">
+    <h2 id="h-cpo">Worst cost-per-outcome days</h2>
+    <p class="hint">Spend divided by tasks completed that day. This is the column that tells you whether a cheap day was cheap because nothing happened or because something was efficient.</p>
+    <div id="cpo"></div>
+  </section>
+
+  <section aria-labelledby="h-tasks">
+    <h2 id="h-tasks">Expensive tasks and read-heavy tasks</h2>
+    <div class="two">
+      <div>
+        <h3>By estimated cost</h3>
+        <div class="scroll"><table id="table-cost"></table></div>
+      </div>
+      <div>
+        <h3>By storage reads <span class="hint-inline">coordination, not intelligence</span></h3>
+        <div class="scroll"><table id="table-reads"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-provenance">
+    <h2 id="h-provenance">Where these numbers come from</h2>
+    <div class="scroll"><table id="table-provenance"></table></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p><strong>Status: v0.1, pre-revenue, no payment rail yet.</strong> This is a working meter, not a product with customers. There is nothing to buy and nobody is billing you.</p>
+  <p>Data on this page: <span id="foot-dataclass">—</span>. Read counts and token counts are measured; estimated USD uses the reference price card in the repo and is a counterfactual, not an invoice.</p>
+  <p><a href="https://github.com/magiautonomous/fleet-burn">Source on GitHub</a> · <a href="https://github.com/magiautonomous/fleet-burn#readme">README</a></p>
+</footer>
+
+<script type="module" src="site/app.js"></script>
+</body>
+</html>
