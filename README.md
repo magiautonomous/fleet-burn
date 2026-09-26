@@ -91,7 +91,7 @@ Or as a library / global bin:
 
 ```bash
 npm install -g fleet-burn   # provides the `fleet-burn` command
-npm test                    # 130 tests, no network, no services
+npm test                    # 141 tests, no network, no services
 ```
 
 ## Quickstart: meter your own fleet
@@ -249,10 +249,16 @@ A dependency-free static page at **`https://magiautonomous.github.io/fleet-burn/
 served by GitHub Pages. One `index.html`, one JS module, one stylesheet, and the
 committed metrics it renders.
 
-It shows burn over time against the cap, the most expensive agents, the worst
-cost-per-outcome days, the expensive tasks and the read-heavy ones side by side,
-the cap verdict, and a **provenance table** listing how every field on the page
-was produced.
+It shows burn over time against the cap — columns for storage reads per day and
+a line for estimated USD on its own axis, so neither number flattens the other —
+then the most expensive agents, the worst cost-per-outcome **tasks** and the
+worst cost-per-outcome days, the expensive tasks and the read-heavy ones side by
+side, the cap verdict, and a **provenance table** listing how every field on the
+page was produced.
+
+Task cost-per-outcome ranks only delivered work. A task that failed or is still
+in flight has no outcome to divide by, so it is left out of the ranking instead
+of being scored as free — otherwise the metric rewards abandoning hard tasks.
 
 ```bash
 node tools/build-dashboard.mjs      # data/*.json -> site/data.json, via the library
@@ -271,19 +277,19 @@ presented as real anywhere in this repo.**
 ### `data/fleet-sample.json` — **REAL fleet telemetry**
 
 Exported from the magi fleet's own instrumentation over **2026-09-11 to
-2026-09-26**:
+2026-09-26** (16 reported days, 12 of them with any activity):
 
 | field | how it was produced |
 | --- | --- |
-| `storageReads` | **MEASURED** — counted from the coordinator's own log line `board poll: N doc(s)`, one document read per card scanned. 849 poll events. |
-| per-task `storageReads` | **MEASURED** — each poll's reads charged to the task whose in-flight window contained that poll's timestamp. 136 reads task-attributed, 87 charged to the agent as idle `coordinationReads`. The two sum to the total; the extractor throws if they do not. |
+| `storageReads` | **MEASURED** — counted from the coordinator's own log line `board poll: N doc(s)`, one document read per card scanned. 854 poll events. |
+| per-task `storageReads` | **MEASURED** — each poll's reads charged to the task whose in-flight window contained that poll's timestamp. 141 reads task-attributed, 87 charged to the agent as idle `coordinationReads`. The two sum to the total; the extractor throws if they do not. |
 | `llmCalls` | **MEASURED** — counted assistant turns in the agent runtime's session store. One assistant message = one LLM call. 2,029. |
-| token counts | **MEASURED** — per-session counters from the runtime, joined to board task ids by session id. 33 of 33 logged task runs matched a session. |
-| `completedTasks` | **MEASURED** — the maintained `memory/board-completions` counter. 132 completions. |
+| token counts | **MEASURED** — per-session counters from the runtime, joined to board task ids by session id. 33 of 35 logged task runs matched a session. |
+| `completedTasks` | **MEASURED** — the maintained `memory/board-completions` counter. 133 completions. |
 | `estimatedCostUsd` | **ESTIMATED** — the reference price card above. The fleet's gateway is unmetered and reports $0.00, so this is a list-price counterfactual. |
 
-Result: **223 storage reads, 2,029 LLM calls, 121.7M tokens, ~$64.50 estimated,
-$0.49 per completed task, 18.6 reads/day** — the post-fix, read-thrift fleet.
+Result: **228 storage reads, 2,029 LLM calls, 121.7M tokens, ~$64.50 estimated,
+$0.48 per completed task, 19.0 reads/day** — the post-fix, read-thrift fleet.
 The reads look tiny because they are: this is the *after* picture, and it is
 published precisely so the *before* picture below has something to be measured
 against.
@@ -350,10 +356,11 @@ npm test                  # node --test test/*.test.js
 
 The suite covers the parser's rejection of malformed input, the cost formula
 term by term, every roll-up rule (including the ones that stop double-counting),
-the budget boundary, all three exit codes through **real process spawns**, and
-the two invariants that keep this honest: the committed sample's rows must
-reconcile to its own totals, and the committed dashboard data must match what
-the library computes from it.
+the budget boundary, all three exit codes through **real process spawns**, the
+cost-per-outcome exclusion rule, and the invariants that keep this honest: the
+committed sample's rows must reconcile to its own totals, the committed
+dashboard data must match what the library computes from it, and the page must
+fetch that one local file and call nothing else at runtime.
 
 ## Design decisions worth arguing about
 

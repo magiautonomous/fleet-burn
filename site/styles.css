@@ -101,6 +101,9 @@ section { margin: 34px 0 0; }
 .chart .bar rect { fill: var(--bar); }
 .chart .bar.over rect { fill: var(--over); }
 .chart .capline { stroke: var(--near); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.chart .cost-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .dot { fill: var(--accent); }
+.chart .axis-right { fill: var(--accent); }
 .chart .caplabel { fill: var(--near); font: 10px var(--mono); }
 .legend { display: flex; gap: 16px; font-size: 12.5px; color: var(--muted); margin: 8px 2px 0; }
 .key { display: inline-flex; align-items: center; gap: 6px; }
@@ -108,6 +111,7 @@ section { margin: 34px 0 0; }
 .k-bar { background: var(--bar); }
 .k-over { background: var(--over); }
 .k-cap { background: transparent; border: 1.5px dashed var(--near); }
+.k-cost { background: var(--accent); border-radius: 999px; height: 3px; width: 14px; }
 
 .agent { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 8px; }
 .a-head { display: flex; gap: 8px; align-items: baseline; }

@@ -265,7 +265,9 @@
       "storageReads": 0,
       "llmCalls": 134,
       "tokensTotal": 9731608,
-      "estimatedCostUsd": 5.2538903999999995
+      "estimatedCostUsd": 5.2538903999999995,
+      "outcomes": 1,
+      "costPerOutcome": 5.2538903999999995
     },
     {
       "id": "hQvpq8SpyzajUrHyVm9G",
@@ -276,7 +278,9 @@
       "storageReads": 0,
       "llmCalls": 58,
       "tokensTotal": 2858408,
-      "estimatedCostUsd": 1.4831856
+      "estimatedCostUsd": 1.4831856,
+      "outcomes": 1,
+      "costPerOutcome": 1.4831856
     },
     {
       "id": "oFN3w4CFMULRsaWVWHQm",
@@ -287,7 +291,9 @@
       "storageReads": 0,
       "llmCalls": 18,
       "tokensTotal": 548537,
-      "estimatedCostUsd": 0.3782022
+      "estimatedCostUsd": 0.3782022,
+      "outcomes": 1,
+      "costPerOutcome": 0.3782022
     },
     {
       "id": "aQPrIERSxmhtBfzvSGMZ",
@@ -298,7 +304,9 @@
       "storageReads": 0,
       "llmCalls": 48,
       "tokensTotal": 2560097,
-      "estimatedCostUsd": 1.4096790000000001
+      "estimatedCostUsd": 1.4096790000000001,
+      "outcomes": 1,
+      "costPerOutcome": 1.4096790000000001
     },
     {
       "id": "Ym0RccDKrnNodDbzPshO",
@@ -309,7 +317,9 @@
       "storageReads": 0,
       "llmCalls": 29,
       "tokensTotal": 945299,
-      "estimatedCostUsd": 0.6359298
+      "estimatedCostUsd": 0.6359298,
+      "outcomes": 1,
+      "costPerOutcome": 0.6359298
     },
     {
       "id": "LCuaoNAirDnCqGQSLD1F",
@@ -320,7 +330,9 @@
       "storageReads": 0,
       "llmCalls": 83,
       "tokensTotal": 6272844,
-      "estimatedCostUsd": 2.8274616
+      "estimatedCostUsd": 2.8274616,
+      "outcomes": 1,
+      "costPerOutcome": 2.8274616
     },
     {
       "id": "Kh7NMhz4SQ1DwVGqqtt6",
@@ -331,7 +343,9 @@
       "storageReads": 0,
       "llmCalls": 34,
       "tokensTotal": 1252987,
-      "estimatedCostUsd": 0.8313185999999999
+      "estimatedCostUsd": 0.8313185999999999,
+      "outcomes": 1,
+      "costPerOutcome": 0.8313185999999999
     },
     {
       "id": "XUP4x4SCSABV3xKaCT9d",
@@ -342,7 +356,9 @@
       "storageReads": 0,
       "llmCalls": 61,
       "tokensTotal": 2676184,
-      "estimatedCostUsd": 1.6043615999999998
+      "estimatedCostUsd": 1.6043615999999998,
+      "outcomes": 1,
+      "costPerOutcome": 1.6043615999999998
     },
     {
       "id": "zkvJxwWK8Hi8Gjqby9H2",
@@ -353,7 +369,9 @@
       "storageReads": 10,
       "llmCalls": 83,
       "tokensTotal": 5098085,
-      "estimatedCostUsd": 2.6586118
+      "estimatedCostUsd": 2.6586118,
+      "outcomes": 1,
+      "costPerOutcome": 2.6586118
     },
     {
       "id": "udCKpx7ZMgZyudQPIFyc",
@@ -364,7 +382,9 @@
       "storageReads": 4,
       "llmCalls": 36,
       "tokensTotal": 1290232,
-      "estimatedCostUsd": 0.771052
+      "estimatedCostUsd": 0.771052,
+      "outcomes": 1,
+      "costPerOutcome": 0.771052
     },
     {
       "id": "y0tYRO9rKa0OCdZ1Ovsi",
@@ -375,7 +395,9 @@
       "storageReads": 2,
       "llmCalls": 73,
       "tokensTotal": 3950844,
-      "estimatedCostUsd": 1.9308224
+      "estimatedCostUsd": 1.9308224,
+      "outcomes": 1,
+      "costPerOutcome": 1.9308224
     },
     {
       "id": "g9LODdzOFo7dNTYwKqTk",
@@ -386,7 +408,9 @@
       "storageReads": 1,
       "llmCalls": 46,
       "tokensTotal": 1579586,
-      "estimatedCostUsd": 0.9768832000000001
+      "estimatedCostUsd": 0.9768832000000001,
+      "outcomes": 1,
+      "costPerOutcome": 0.9768832000000001
     },
     {
       "id": "usLwSnQ2Jqv6q8QUAbGq",
@@ -397,7 +421,9 @@
       "storageReads": 4,
       "llmCalls": 37,
       "tokensTotal": 1941774,
-      "estimatedCostUsd": 1.2870652
+      "estimatedCostUsd": 1.2870652,
+      "outcomes": 1,
+      "costPerOutcome": 1.2870652
     },
     {
       "id": "86F95MQU4PLvMcUyAYmX",
@@ -408,7 +434,9 @@
       "storageReads": 5,
       "llmCalls": 65,
       "tokensTotal": 4217403,
-      "estimatedCostUsd": 2.159819
+      "estimatedCostUsd": 2.159819,
+      "outcomes": 1,
+      "costPerOutcome": 2.159819
     },
     {
       "id": "dtYHTynTmIlyWLXcU7Ka",
@@ -419,7 +447,9 @@
       "storageReads": 19,
       "llmCalls": 174,
       "tokensTotal": 14714366,
-      "estimatedCostUsd": 7.030556799999999
+      "estimatedCostUsd": 7.030556799999999,
+      "outcomes": 1,
+      "costPerOutcome": 7.030556799999999
     },
     {
       "id": "5DEwl20YEqZwMRTQgyQI",
@@ -430,7 +460,9 @@
       "storageReads": 3,
       "llmCalls": 53,
       "tokensTotal": 3460447,
-      "estimatedCostUsd": 1.8169974
+      "estimatedCostUsd": 1.8169974,
+      "outcomes": 1,
+      "costPerOutcome": 1.8169974
     },
     {
       "id": "MfXjtG87by6xlotKX6ju",
@@ -441,7 +473,9 @@
       "storageReads": 1,
       "llmCalls": 47,
       "tokensTotal": 1846778,
-      "estimatedCostUsd": 0.9131128
+      "estimatedCostUsd": 0.9131128,
+      "outcomes": 1,
+      "costPerOutcome": 0.9131128
     },
     {
       "id": "nYvQtbdtqSboAK73jU9z",
@@ -452,7 +486,9 @@
       "storageReads": 1,
       "llmCalls": 42,
       "tokensTotal": 1716727,
-      "estimatedCostUsd": 0.8861782
+      "estimatedCostUsd": 0.8861782,
+      "outcomes": 1,
+      "costPerOutcome": 0.8861782
     },
     {
       "id": "g7DqF6Y1roGNHEZs3XWN",
@@ -463,7 +499,9 @@
       "storageReads": 0,
       "llmCalls": 77,
       "tokensTotal": 5757825,
-      "estimatedCostUsd": 3.125655
+      "estimatedCostUsd": 3.125655,
+      "outcomes": 1,
+      "costPerOutcome": 3.125655
     },
     {
       "id": "mNcN1HXNjVZWPoUjhlJT",
@@ -474,7 +512,9 @@
       "storageReads": 4,
       "llmCalls": 49,
       "tokensTotal": 2294709,
-      "estimatedCostUsd": 1.1999446
+      "estimatedCostUsd": 1.1999446,
+      "outcomes": 1,
+      "costPerOutcome": 1.1999446
     },
     {
       "id": "qNebSbgc7XE4xQQGAc9O",
@@ -485,7 +525,9 @@
       "storageReads": 4,
       "llmCalls": 55,
       "tokensTotal": 3236028,
-      "estimatedCostUsd": 1.8005079999999998
+      "estimatedCostUsd": 1.8005079999999998,
+      "outcomes": 1,
+      "costPerOutcome": 1.8005079999999998
     },
     {
       "id": "3jtll5WPDPhzOLtgvFjG",
@@ -496,7 +538,9 @@
       "storageReads": 3,
       "llmCalls": 57,
       "tokensTotal": 2830679,
-      "estimatedCostUsd": 1.6198302
+      "estimatedCostUsd": 1.6198302,
+      "outcomes": 1,
+      "costPerOutcome": 1.6198302
     },
     {
       "id": "TsN8RerKLSPMeNgTBu53",
@@ -507,7 +551,9 @@
       "storageReads": 1,
       "llmCalls": 24,
       "tokensTotal": 469837,
-      "estimatedCostUsd": 0.3520498
+      "estimatedCostUsd": 0.3520498,
+      "outcomes": 1,
+      "costPerOutcome": 0.3520498
     },
     {
       "id": "IdfT7peN6rOdKWSGPZOh",
@@ -518,7 +564,9 @@
       "storageReads": 2,
       "llmCalls": 38,
       "tokensTotal": 1124650,
-      "estimatedCostUsd": 0.6823292000000001
+      "estimatedCostUsd": 0.6823292000000001,
+      "outcomes": 1,
+      "costPerOutcome": 0.6823292000000001
     },
     {
       "id": "g97qKOnNTqXZR1wmu3JB",
@@ -529,7 +577,9 @@
       "storageReads": 4,
       "llmCalls": 40,
       "tokensTotal": 1972165,
-      "estimatedCostUsd": 1.356391
+      "estimatedCostUsd": 1.356391,
+      "outcomes": 1,
+      "costPerOutcome": 1.356391
     },
     {
       "id": "HGdmngqvVcIKkA3oQR1a",
@@ -540,7 +590,9 @@
       "storageReads": 4,
       "llmCalls": 45,
       "tokensTotal": 2189269,
-      "estimatedCostUsd": 1.239571
+      "estimatedCostUsd": 1.239571,
+      "outcomes": 1,
+      "costPerOutcome": 1.239571
     },
     {
       "id": "9Db8yYkc4JQzE3jAVjqr",
@@ -551,7 +603,9 @@
       "storageReads": 6,
       "llmCalls": 52,
       "tokensTotal": 2814551,
-      "estimatedCostUsd": 1.4239914
+      "estimatedCostUsd": 1.4239914,
+      "outcomes": 1,
+      "costPerOutcome": 1.4239914
     },
     {
       "id": "cm7G2uwubmCsFpT59lFe",
@@ -562,7 +616,9 @@
       "storageReads": 5,
       "llmCalls": 73,
       "tokensTotal": 4999264,
-      "estimatedCostUsd": 2.202506
+      "estimatedCostUsd": 2.202506,
+      "outcomes": 1,
+      "costPerOutcome": 2.202506
     },
     {
       "id": "nBn1gBAw5pxytJpD1HcR",
@@ -573,7 +629,9 @@
       "storageReads": 2,
       "llmCalls": 71,
       "tokensTotal": 4360773,
-      "estimatedCostUsd": 2.339795
+      "estimatedCostUsd": 2.339795,
+      "outcomes": 1,
+      "costPerOutcome": 2.339795
     },
     {
       "id": "lCfcdVVgzDNC3P7dQotv",
@@ -584,7 +642,9 @@
       "storageReads": 7,
       "llmCalls": 89,
       "tokensTotal": 7165414,
-      "estimatedCostUsd": 3.0303568
+      "estimatedCostUsd": 3.0303568,
+      "outcomes": 1,
+      "costPerOutcome": 3.0303568
     },
     {
       "id": "XcFedHKZ8jqRcThTrJms",
@@ -595,7 +655,9 @@
       "storageReads": 4,
       "llmCalls": 66,
       "tokensTotal": 4041002,
-      "estimatedCostUsd": 2.0676724
+      "estimatedCostUsd": 2.0676724,
+      "outcomes": 1,
+      "costPerOutcome": 2.0676724
     },
     {
       "id": "z0mXc5cYthruJB33H3Dv",
@@ -606,7 +668,9 @@
       "storageReads": 18,
       "llmCalls": 77,
       "tokensTotal": 5401996,
-      "estimatedCostUsd": 3.3215807999999996
+      "estimatedCostUsd": 3.3215807999999996,
+      "outcomes": 1,
+      "costPerOutcome": 3.3215807999999996
     },
     {
       "id": "ittTlXkFrPtPieFQrKun",
@@ -617,7 +681,9 @@
       "storageReads": 21,
       "llmCalls": 95,
       "tokensTotal": 6382791,
-      "estimatedCostUsd": 3.8777684999999997
+      "estimatedCostUsd": 3.8777684999999997,
+      "outcomes": 1,
+      "costPerOutcome": 3.8777684999999997
     },
     {
       "id": "tGptJ2vpaLanET3rZKWK",
@@ -628,7 +694,121 @@
       "storageReads": 6,
       "llmCalls": 0,
       "tokensTotal": 0,
-      "estimatedCostUsd": 0.0000024
+      "estimatedCostUsd": 0.0000024,
+      "outcomes": 0,
+      "costPerOutcome": null
+    }
+  ],
+  "worstCostPerOutcomeTasks": [
+    {
+      "id": "dtYHTynTmIlyWLXcU7Ka",
+      "title": "Build the x402 pay-per-request resource server (productize fleet-status as a paid API)",
+      "agent": "Balthasar",
+      "storageReads": 19,
+      "llmCalls": 174,
+      "tokensTotal": 14714366,
+      "estimatedCostUsd": 7.030556799999999,
+      "outcomes": 1,
+      "costPerOutcome": 7.030556799999999
+    },
+    {
+      "id": "SzUwbkGvAWi3i6WBufnq",
+      "title": "Audit + harden worker systemd units: verify cc-worker.service health on all hosts, fix the .env loader gap, and adopt th",
+      "agent": "Balthasar",
+      "storageReads": 0,
+      "llmCalls": 134,
+      "tokensTotal": 9731608,
+      "estimatedCostUsd": 5.2538903999999995,
+      "outcomes": 1,
+      "costPerOutcome": 5.2538903999999995
+    },
+    {
+      "id": "ittTlXkFrPtPieFQrKun",
+      "title": "Make worker dependency boot checks content-based to avoid active-session cold boots",
+      "agent": "Balthasar",
+      "storageReads": 21,
+      "llmCalls": 95,
+      "tokensTotal": 6382791,
+      "estimatedCostUsd": 3.8777684999999997,
+      "outcomes": 1,
+      "costPerOutcome": 3.8777684999999997
+    },
+    {
+      "id": "z0mXc5cYthruJB33H3Dv",
+      "title": "Re: Email reading — CC mailbox loop is live",
+      "agent": "Balthasar",
+      "storageReads": 18,
+      "llmCalls": 77,
+      "tokensTotal": 5401996,
+      "estimatedCostUsd": 3.3215807999999996,
+      "outcomes": 1,
+      "costPerOutcome": 3.3215807999999996
+    },
+    {
+      "id": "g7DqF6Y1roGNHEZs3XWN",
+      "title": "Build a first-sale runbook + pay-to-receipt verification tool for the x402 fleet-status API",
+      "agent": "Balthasar",
+      "storageReads": 0,
+      "llmCalls": 77,
+      "tokensTotal": 5757825,
+      "estimatedCostUsd": 3.125655,
+      "outcomes": 1,
+      "costPerOutcome": 3.125655
+    },
+    {
+      "id": "lCfcdVVgzDNC3P7dQotv",
+      "title": "Submit Magi to developer-friendly directories/awesome-lists (distribution: lifts third-party mentions > 0)",
+      "agent": "Balthasar",
+      "storageReads": 7,
+      "llmCalls": 89,
+      "tokensTotal": 7165414,
+      "estimatedCostUsd": 3.0303568,
+      "outcomes": 1,
+      "costPerOutcome": 3.0303568
+    },
+    {
+      "id": "LCuaoNAirDnCqGQSLD1F",
+      "title": "Verify the x402 funding rail is LIVE end-to-end: chargeable quote + reconcile CLI + landing Fund CTA",
+      "agent": "Balthasar",
+      "storageReads": 0,
+      "llmCalls": 83,
+      "tokensTotal": 6272844,
+      "estimatedCostUsd": 2.8274616,
+      "outcomes": 1,
+      "costPerOutcome": 2.8274616
+    },
+    {
+      "id": "zkvJxwWK8Hi8Gjqby9H2",
+      "title": "Boot-guard regression test: prove the npm-ci guard fails closed",
+      "agent": "Balthasar",
+      "storageReads": 10,
+      "llmCalls": 83,
+      "tokensTotal": 5098085,
+      "estimatedCostUsd": 2.6586118,
+      "outcomes": 1,
+      "costPerOutcome": 2.6586118
+    },
+    {
+      "id": "nBn1gBAw5pxytJpD1HcR",
+      "title": "Draft the community launch pack: Show HN + Reddit (r/selfhosted, r/SideProject) + X announcement posts (get third-party",
+      "agent": "Balthasar",
+      "storageReads": 2,
+      "llmCalls": 71,
+      "tokensTotal": 4360773,
+      "estimatedCostUsd": 2.339795,
+      "outcomes": 1,
+      "costPerOutcome": 2.339795
+    },
+    {
+      "id": "cm7G2uwubmCsFpT59lFe",
+      "title": "x402 paid API consumer docs: reference page with auth flow + curl examples, linked from both surfaces",
+      "agent": "Balthasar",
+      "storageReads": 5,
+      "llmCalls": 73,
+      "tokensTotal": 4999264,
+      "estimatedCostUsd": 2.202506,
+      "outcomes": 1,
+      "costPerOutcome": 2.202506
     }
   ],
   "provenance": {

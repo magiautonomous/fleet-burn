@@ -98,6 +98,21 @@ const payload = {
     llmCalls: t.llmCalls,
     tokensTotal: t.tokensTotal,
     estimatedCostUsd: t.estimatedCostUsd,
+    outcomes: t.outcomes,
+    costPerOutcome: t.costPerOutcome,
+  })),
+  // What each delivered task cost. Ranked by the library, trimmed to the ten
+  // worst for the page, so the page never re-sorts the library's answer.
+  worstCostPerOutcomeTasks: report.rankings.worstCostPerOutcomeTasks.slice(0, 10).map((t) => ({
+    id: t.id,
+    title: t.title,
+    agent: t.agent,
+    storageReads: t.storageReads,
+    llmCalls: t.llmCalls,
+    tokensTotal: t.tokensTotal,
+    estimatedCostUsd: t.estimatedCostUsd,
+    outcomes: t.outcomes,
+    costPerOutcome: t.costPerOutcome,
   })),
   provenance: metrics.provenance,
   pricing: metrics.pricing,

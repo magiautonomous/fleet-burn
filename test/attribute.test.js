@@ -1,10 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { attribute, burnRate, activeSpan, taskLabel } from '../lib/attribute.js';
 import { parseMetrics } from '../lib/parse.js';
 import { REFERENCE_PRICE_CARD } from '../lib/price.js';
 import { twoDayFleet, emptyFleet } from './fixtures.js';
+
+const dataDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data');
 
 const M = 1_000_000;
 const approx = (a, b, eps = 1e-6) => assert.ok(Math.abs(a - b) <= eps, `${a} !~= ${b}`);
@@ -190,6 +195,7 @@ test('cost per outcome is spend divided by completed tasks, and null with no com
 
 test('worst cost-per-outcome ranks the days that spent the most per completion', () => {
   const r = attribute(twoDayFleet());
+  assert.ok(Array.isArray(r.rankings.worstCostPerOutcomeTasks));
   assert.equal(r.rankings.worstCostPerOutcomeDays[0].date, '2026-09-02',
     'day 2 spent far more and completed one task');
 });
@@ -261,4 +267,44 @@ test('taskLabel is safe to print in a CI failure', () => {
   assert.equal(taskLabel({ id: 'T1', title: 'do the thing' }), 'do the thing (T1)');
   assert.equal(taskLabel({ id: 'T1', title: '' }), 'task (T1)');
   assert.match(taskLabel({}), /untitled/);
+});
+
+
+test('a delivered task is one outcome, and its cost per outcome is what it cost', () => {
+  const r = attribute(twoDayFleet());
+  const done = r.tasks.filter((t) => t.status === 'Done');
+  assert.ok(done.length > 0, 'the fixture has delivered work to rank');
+  for (const t of done) {
+    assert.equal(t.outcomes, 1);
+    assert.equal(t.costPerOutcome, t.estimatedCostUsd);
+  }
+  const ranked = r.rankings.worstCostPerOutcomeTasks;
+  assert.equal(ranked.length, done.length, 'only delivered tasks are ranked');
+  assert.equal(ranked[0].id, done.slice().sort((a, b) => b.estimatedCostUsd - a.estimatedCostUsd)[0].id);
+});
+
+test('work that never landed has no outcome and is never scored as free', () => {
+  const r = attribute(twoDayFleet());
+  for (const t of r.tasks.filter((x) => x.status !== 'Done')) {
+    assert.equal(t.outcomes, 0);
+    assert.equal(t.costPerOutcome, null, 'a null, not a misleading zero');
+  }
+  const unfinished = r.tasks.filter((x) => x.status !== 'Done');
+  assert.ok(
+    !r.rankings.worstCostPerOutcomeTasks.some((t) => unfinished.some((u) => u.id === t.id)),
+    'an abandoned task must not appear in the cost-per-outcome ranking',
+  );
+});
+
+test('a task that failed is excluded from cost-per-outcome even though it spent', () => {
+  const m = parseMetrics(JSON.parse(readFileSync(path.join(dataDir, 'fleet-sample.json'), 'utf8')));
+  const spent = { ...m, tasks: [{ id: 'T-fail', title: 'blew up', agent: 'alpha', status: 'Done-but-failed', llmCalls: 900, tokensIn: 5e6, tokensOut: 1e6 }] };
+  const r = attribute(spent);
+  assert.equal(r.totals.estimatedCostUsd > 0, true, 'it still shows up in the totals');
+  assert.equal(r.rankings.worstCostPerOutcomeTasks.length, 0, 'but it has no outcome to divide by');
+  assert.equal(
+    r.totals.costPerOutcome,
+    r.totals.estimatedCostUsd / m.totals.tasksCompleted,
+    'the fleet rate still comes from the completions the document declares, not from the failed row',
+  );
 });

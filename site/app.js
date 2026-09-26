@@ -147,23 +147,40 @@ function renderChart(d) {
       `<text class="caplabel" x="${W - 10}" y="${(padT + plotH - (Math.min(1, cap / maxReads) * plotH) - 5).toFixed(1)}" text-anchor="end">cap ${int(cap)}</text>`
     : '';
 
+  // Second series on its own scale, so burn is readable as both the thing you
+  // are billed for (USD) and the thing that actually takes the fleet down
+  // (reads). One axis for both would make the cheaper one a flat line.
+  const costMax = Math.max(...days.map((x) => Number(x.estimatedCostUsd) || 0), 0.0001);
+  const costY = (v) => padT + plotH - ((Number(v) || 0) / costMax) * plotH;
+  const costX = (i) => padL + i * bw + bw / 2;
+  const costPath = days.map((x, i) => `${i ? 'L' : 'M'}${costX(i).toFixed(1)} ${costY(x.estimatedCostUsd).toFixed(1)}`).join(' ');
+  const costDots = days
+    .map((x, i) => `<circle class="dot" cx="${costX(i).toFixed(1)}" cy="${costY(x.estimatedCostUsd).toFixed(1)}" r="2.6"><title>${esc(x.date)}: ${usd(x.estimatedCostUsd)} estimated</title></circle>`)
+    .join('');
+  const costAxis = [0, 0.5, 1]
+    .map((f) => `<text class="axis axis-right" x="${W - 10}" y="${(padT + plotH - f * plotH + 3).toFixed(1)}" text-anchor="start">${usd(costMax * f)}</text>`)
+    .join('');
+
   el('chart-burn').innerHTML =
     `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" width="100%">` +
     yTicks.join('') +
     `<line class="axis-line" x1="${padL}" y1="${padT + plotH}" x2="${W - 8}" y2="${padT + plotH}"/>` +
     capLine +
     bars +
+    `<path class="cost-line" d="${costPath}"/>` +
+    costDots +
+    costAxis +
     `</svg>`;
 
-  const costMax = Math.max(...days.map((x) => x.estimatedCostUsd), 0.0001);
   el('burn-hint').textContent =
-    `Columns are storage reads per day (axis and cap line). Estimated cost for the same days runs ` +
-    `${usd(Math.min(...days.map((x) => x.estimatedCostUsd)))} to ${usd(costMax)}; hover a column for the exact day.`;
+    `Columns are storage reads per day (left axis, with the cap line). The line is estimated USD for the ` +
+    `same days (right axis, ${usd(0)} to ${usd(costMax)}); hover a column or a point for the exact day.`;
 
   el('legend').innerHTML =
     `<span class="key"><i class="k-bar"></i>storage reads</span>` +
     (cap > 0 ? `<span class="key"><i class="k-cap"></i>budget cap</span>` : '') +
-    `<span class="key"><i class="k-over"></i>over cap</span>`;
+    `<span class="key"><i class="k-over"></i>over cap</span>` +
+    `<span class="key"><i class="k-cost"></i>estimated USD</span>`;
 }
 
 // ------------------------------------------------------------------ tables
@@ -219,6 +236,24 @@ function renderAgents(d) {
       </div>`;
     })
     .join('');
+}
+
+function renderCpoTasks(d) {
+  const rows = (d.worstCostPerOutcomeTasks || []).slice(0, 10);
+  table(
+    'cpo-tasks',
+    ['task', 'agent', 'est. USD / outcome', 'est. USD', 'reads', 'calls', 'tokens'],
+    rows.map((t) => [
+      esc(short(t.title || t.id, 58)),
+      `<span class="muted">${esc(t.agent || '-')}</span>`,
+      `<b>${usd(t.costPerOutcome)}</b>`,
+      usd(t.estimatedCostUsd),
+      int(t.storageReads),
+      int(t.llmCalls),
+      int(t.tokensTotal),
+    ]),
+    'no completed task reported any spend',
+  );
 }
 
 function renderCpo(d) {
@@ -311,6 +346,7 @@ function render(d) {
   renderChart(d);
   renderDays(d);
   renderAgents(d);
+  renderCpoTasks(d);
   renderCpo(d);
   renderTasks(d);
   renderProvenance(d);
