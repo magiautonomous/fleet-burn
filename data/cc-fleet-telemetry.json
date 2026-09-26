@@ -1,0 +1,341 @@
+{
+  "schema": "cc-fleet/telemetry@1",
+  "fleet": "CC fleet — 3 autonomous workers + 1 coordinator on a Firestore free-tier database",
+  "window": {
+    "startUtc": "2026-09-12T07:00:00.000Z",
+    "endUtc": "2026-09-27T07:00:00.000Z",
+    "lastLogLineUtc": "2026-09-26T08:20:15.050Z",
+    "complete": false
+  },
+  "quota": {
+    "kind": "firestore-free-tier-daily-read-units",
+    "readsPerDay": 50000,
+    "resetsAtUtc": "07:00Z"
+  },
+  "logLinesScanned": 129449,
+  "agents": [
+    {
+      "id": "Balthasar",
+      "role": "coordinator",
+      "quotaDays": 15,
+      "measuredReads": 1116
+    }
+  ],
+  "quotaDays": [
+    {
+      "date": "2026-09-12",
+      "startUtc": "2026-09-12T07:00:00.000Z",
+      "endUtc": "2026-09-13T07:00:00.000Z",
+      "observedHours": 19.91,
+      "pollAttempts": 0,
+      "pollsSucceeded": 0,
+      "pollsRejected": 0,
+      "pollDocReads": 0,
+      "heartbeatRejections": 677,
+      "quotaRejections": 677,
+      "quotaExhausted": true,
+      "burnThrough": null,
+      "lastPollOkAtUtc": null,
+      "boots": 2,
+      "tasksCompleted": 2
+    },
+    {
+      "date": "2026-09-13",
+      "startUtc": "2026-09-13T07:00:00.000Z",
+      "endUtc": "2026-09-14T07:00:00.000Z",
+      "observedHours": 23.99,
+      "pollAttempts": 0,
+      "pollsSucceeded": 0,
+      "pollsRejected": 0,
+      "pollDocReads": 0,
+      "heartbeatRejections": 1164,
+      "quotaRejections": 1164,
+      "quotaExhausted": true,
+      "burnThrough": null,
+      "lastPollOkAtUtc": null,
+      "boots": 0,
+      "tasksCompleted": 3
+    },
+    {
+      "date": "2026-09-14",
+      "startUtc": "2026-09-14T07:00:00.000Z",
+      "endUtc": "2026-09-15T07:00:00.000Z",
+      "observedHours": 24,
+      "pollAttempts": 591,
+      "pollsSucceeded": 0,
+      "pollsRejected": 591,
+      "pollDocReads": 0,
+      "heartbeatRejections": 386,
+      "quotaRejections": 977,
+      "quotaExhausted": true,
+      "burnThrough": null,
+      "lastPollOkAtUtc": null,
+      "boots": 7,
+      "tasksCompleted": 7
+    },
+    {
+      "date": "2026-09-15",
+      "startUtc": "2026-09-15T07:00:00.000Z",
+      "endUtc": "2026-09-16T07:00:00.000Z",
+      "observedHours": 23.96,
+      "pollAttempts": 676,
+      "pollsSucceeded": 50,
+      "pollsRejected": 626,
+      "pollDocReads": 66,
+      "heartbeatRejections": 397,
+      "quotaRejections": 1023,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-15T09:55:27.789Z",
+        "lastOkAtUtc": "2026-09-15T09:53:25.817Z",
+        "minutes": 175.5
+      },
+      "lastPollOkAtUtc": "2026-09-15T21:41:21.426Z",
+      "boots": 6,
+      "tasksCompleted": 4
+    },
+    {
+      "date": "2026-09-16",
+      "startUtc": "2026-09-16T07:00:00.000Z",
+      "endUtc": "2026-09-17T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 93,
+      "pollsRejected": 627,
+      "pollDocReads": 112,
+      "heartbeatRejections": 376,
+      "quotaRejections": 1003,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-16T09:53:31.251Z",
+        "lastOkAtUtc": "2026-09-16T09:51:20.729Z",
+        "minutes": 173.5
+      },
+      "lastPollOkAtUtc": "2026-09-16T13:23:21.048Z",
+      "boots": 0,
+      "tasksCompleted": 5
+    },
+    {
+      "date": "2026-09-17",
+      "startUtc": "2026-09-17T07:00:00.000Z",
+      "endUtc": "2026-09-18T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 92,
+      "pollsRejected": 628,
+      "pollDocReads": 98,
+      "heartbeatRejections": 361,
+      "quotaRejections": 989,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-17T09:37:33.510Z",
+        "lastOkAtUtc": "2026-09-17T09:35:22.431Z",
+        "minutes": 157.6
+      },
+      "lastPollOkAtUtc": "2026-09-18T06:47:23.962Z",
+      "boots": 0,
+      "tasksCompleted": 0
+    },
+    {
+      "date": "2026-09-18",
+      "startUtc": "2026-09-18T07:00:00.000Z",
+      "endUtc": "2026-09-19T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 84,
+      "pollsRejected": 636,
+      "pollDocReads": 110,
+      "heartbeatRejections": 419,
+      "quotaRejections": 1055,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-18T09:43:34.035Z",
+        "lastOkAtUtc": "2026-09-18T09:41:24.237Z",
+        "minutes": 163.6
+      },
+      "lastPollOkAtUtc": "2026-09-19T06:23:26.402Z",
+      "boots": 0,
+      "tasksCompleted": 2
+    },
+    {
+      "date": "2026-09-19",
+      "startUtc": "2026-09-19T07:00:00.000Z",
+      "endUtc": "2026-09-20T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 81,
+      "pollsRejected": 639,
+      "pollDocReads": 96,
+      "heartbeatRejections": 382,
+      "quotaRejections": 1021,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-19T09:27:35.276Z",
+        "lastOkAtUtc": "2026-09-19T09:25:34.495Z",
+        "minutes": 147.6
+      },
+      "lastPollOkAtUtc": "2026-09-19T21:59:29.331Z",
+      "boots": 0,
+      "tasksCompleted": 5
+    },
+    {
+      "date": "2026-09-20",
+      "startUtc": "2026-09-20T07:00:00.000Z",
+      "endUtc": "2026-09-21T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 73,
+      "pollsRejected": 647,
+      "pollDocReads": 80,
+      "heartbeatRejections": 403,
+      "quotaRejections": 1050,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-20T09:09:35.422Z",
+        "lastOkAtUtc": "2026-09-20T09:07:30.325Z",
+        "minutes": 129.6
+      },
+      "lastPollOkAtUtc": "2026-09-20T19:41:31.406Z",
+      "boots": 0,
+      "tasksCompleted": 2
+    },
+    {
+      "date": "2026-09-21",
+      "startUtc": "2026-09-21T07:00:00.000Z",
+      "endUtc": "2026-09-22T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 78,
+      "pollsRejected": 642,
+      "pollDocReads": 86,
+      "heartbeatRejections": 401,
+      "quotaRejections": 1043,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-21T09:25:36.572Z",
+        "lastOkAtUtc": "2026-09-21T09:23:29.463Z",
+        "minutes": 145.6
+      },
+      "lastPollOkAtUtc": "2026-09-21T13:07:32.849Z",
+      "boots": 0,
+      "tasksCompleted": 2
+    },
+    {
+      "date": "2026-09-22",
+      "startUtc": "2026-09-22T07:00:00.000Z",
+      "endUtc": "2026-09-23T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 71,
+      "pollsRejected": 649,
+      "pollDocReads": 99,
+      "heartbeatRejections": 406,
+      "quotaRejections": 1055,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-22T08:55:38.217Z",
+        "lastOkAtUtc": "2026-09-22T08:53:31.823Z",
+        "minutes": 115.6
+      },
+      "lastPollOkAtUtc": "2026-09-22T18:55:39.596Z",
+      "boots": 0,
+      "tasksCompleted": 6
+    },
+    {
+      "date": "2026-09-23",
+      "startUtc": "2026-09-23T07:00:00.000Z",
+      "endUtc": "2026-09-24T07:00:00.000Z",
+      "observedHours": 23.97,
+      "pollAttempts": 720,
+      "pollsSucceeded": 69,
+      "pollsRejected": 651,
+      "pollDocReads": 103,
+      "heartbeatRejections": 419,
+      "quotaRejections": 1070,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-23T09:03:41.926Z",
+        "lastOkAtUtc": "2026-09-23T09:01:33.627Z",
+        "minutes": 123.7
+      },
+      "lastPollOkAtUtc": "2026-09-23T23:49:33.587Z",
+      "boots": 0,
+      "tasksCompleted": 5
+    },
+    {
+      "date": "2026-09-24",
+      "startUtc": "2026-09-24T07:00:00.000Z",
+      "endUtc": "2026-09-25T07:00:00.000Z",
+      "observedHours": 23.96,
+      "pollAttempts": 720,
+      "pollsSucceeded": 72,
+      "pollsRejected": 648,
+      "pollDocReads": 111,
+      "heartbeatRejections": 383,
+      "quotaRejections": 1031,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-24T08:46:12.555Z",
+        "lastOkAtUtc": "2026-09-24T08:44:03.586Z",
+        "minutes": 106.2
+      },
+      "lastPollOkAtUtc": "2026-09-25T05:38:11.131Z",
+      "boots": 1,
+      "tasksCompleted": 3
+    },
+    {
+      "date": "2026-09-25",
+      "startUtc": "2026-09-25T07:00:00.000Z",
+      "endUtc": "2026-09-26T07:00:00.000Z",
+      "observedHours": 23.99,
+      "pollAttempts": 720,
+      "pollsSucceeded": 73,
+      "pollsRejected": 647,
+      "pollDocReads": 95,
+      "heartbeatRejections": 406,
+      "quotaRejections": 1053,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-25T09:06:13.414Z",
+        "lastOkAtUtc": "2026-09-25T09:04:15.291Z",
+        "minutes": 126.2
+      },
+      "lastPollOkAtUtc": "2026-09-25T23:08:05.926Z",
+      "boots": 0,
+      "tasksCompleted": 1
+    },
+    {
+      "date": "2026-09-26",
+      "startUtc": "2026-09-26T07:00:00.000Z",
+      "endUtc": "2026-09-27T07:00:00.000Z",
+      "observedHours": 1.34,
+      "pollAttempts": 41,
+      "pollsSucceeded": 40,
+      "pollsRejected": 1,
+      "pollDocReads": 60,
+      "heartbeatRejections": 0,
+      "quotaRejections": 1,
+      "quotaExhausted": true,
+      "burnThrough": {
+        "atUtc": "2026-09-26T08:20:15.050Z",
+        "lastOkAtUtc": "2026-09-26T08:18:06.499Z",
+        "minutes": 80.3
+      },
+      "lastPollOkAtUtc": "2026-09-26T08:18:06.499Z",
+      "boots": 0,
+      "tasksCompleted": 1
+    }
+  ],
+  "provenance": {
+    "source": "MEASURED - counters parsed out of the CC fleet coordinator log on the host that runs the coordinator.",
+    "pollAttempts": "MEASURED - one coordinator board poll every 120s, logged per attempt as \"board poll: N doc(s)\" or a quota rejection.",
+    "pollDocReads": "MEASURED - one read unit per successful poll plus one per document it returned. Rejected attempts cost nothing: the API refuses them before reading anything.",
+    "quotaRejections": "MEASURED - operations the API refused with RESOURCE_EXHAUSTED on the \"Free daily read units per project (free tier database)\" quota.",
+    "minutesToExhaust": "MEASURED - minutes from the quota reset to the first poll rejection, reported only when a successful poll lands within 10 minutes before it.",
+    "boots": "MEASURED - one process start per \"registered in agents/<id> as Online\" line.",
+    "tasksCompleted": "MEASURED - one per task transition to Done on the board.",
+    "observedHours": "MEASURED - span of timestamps this day has in the scanned log, clipped to the day.",
+    "sanitized": "YES - this document carries counters, timestamps and agent ids only. No task titles, board ids, hostnames or paths are copied out of the log.",
+    "window": "MEASURED - the span of quota days the scanned log covers, and the last timestamp it contains. The final day may be partial; the committed dataset is a fixed snapshot of that moment."
+  }
+}

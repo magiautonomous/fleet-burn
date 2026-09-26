@@ -44,6 +44,12 @@
     <div class="scroll"><table id="table-days"></table></div>
   </section>
 
+  <section aria-labelledby="h-events">
+    <h2 id="h-events">What else happened</h2>
+    <p class="hint">Burn dimensions say how much. These counters say what: a day can be expensive because something booted, retried or was rejected, and that is the part you can fix. Optional — a fleet that emits none simply sees an empty state.</p>
+    <div class="scroll"><table id="table-events"></table></div>
+  </section>
+
   <section aria-labelledby="h-agents">
     <h2 id="h-agents">Most expensive agents</h2>
     <div id="agents"></div>
@@ -79,8 +85,9 @@
 </main>
 
 <footer class="wrap">
-  <p><strong>Status: v0.1, pre-revenue, no payment rail yet.</strong> This is a working meter, not a product with customers. There is nothing to buy and nobody is billing you.</p>
+  <p><strong>Status: v0.2, pre-revenue, no payment rail yet.</strong> This is a working meter, not a product with customers. There is nothing to buy and nobody is billing you.</p>
   <p>Data on this page: <span id="foot-dataclass">—</span>. Read counts and token counts are measured; estimated USD uses the reference price card in the repo and is a counterfactual, not an invoice.</p>
+  <p><strong>Also:</strong> <a href="cc.html">CC fleet burn</a> — this fleet measured against the 50,000-read/day free-tier ceiling, including the part it cannot attribute.</p>
   <p><a href="https://github.com/magiautonomous/fleet-burn">Source on GitHub</a> · <a href="https://github.com/magiautonomous/fleet-burn#readme">README</a></p>
 </footer>
 

@@ -308,6 +308,36 @@ function renderTasks(d) {
   );
 }
 
+function renderEvents(d) {
+  const kinds = [...new Set((d.events || []).map((e) => e.kind))];
+  if (!kinds.length) {
+    el('table-events').innerHTML =
+      '<tbody><tr><td class="hint">this document declares no operational events</td></tr></tbody>';
+    return;
+  }
+  const byDay = new Map();
+  for (const e of d.events) {
+    if (!byDay.has(e.date)) byDay.set(e.date, new Map());
+    byDay.get(e.date).set(e.kind, e);
+  }
+  el('table-events').innerHTML =
+    `<thead><tr><th>date</th>${kinds.map((k) => `<th>${esc(k)}</th>`).join('')}</tr></thead><tbody>` +
+    [...byDay.entries()]
+      .map(
+        ([date, row]) =>
+          `<tr><td><code>${esc(date)}</code></td>` +
+          kinds
+            .map((k) => {
+              const e = row.get(k);
+              return e ? `<td title="${esc(e.note || '')}">${int(e.count)}</td>` : '<td class="muted">—</td>';
+            })
+            .join('') +
+          '</tr>',
+      )
+      .join('') +
+    '</tbody>';
+}
+
 function renderProvenance(d) {
   const rows = Object.entries(d.provenance || {});
   const price = d.pricing?.note ? [['estimated cost', d.pricing.note]] : [];
@@ -345,6 +375,7 @@ function render(d) {
   renderBudget(d);
   renderChart(d);
   renderDays(d);
+  renderEvents(d);
   renderAgents(d);
   renderCpoTasks(d);
   renderCpo(d);

@@ -1,6 +1,6 @@
 {
   "name": "fleet-burn",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Zero-dependency cost and usage meter for agent fleets: attributes storage reads, LLM calls, tokens and estimated USD to the agent and task that caused them, and fails the build when a daily budget cap is blown.",
   "type": "module",
   "license": "MIT",
@@ -23,7 +23,10 @@
   ],
   "scripts": {
     "test": "node --test test/*.test.js",
-    "report": "node bin/fleet-burn.js data/fleet-sample.json"
+    "report": "node bin/fleet-burn.js data/fleet-sample.json",
+    "report:cc": "node bin/fleet-burn.js data/cc-fleet-metrics.json --cap-reads-per-day 50000",
+    "build:cc": "node tools/build-cc-dashboard.mjs",
+    "build": "node tools/build-dashboard.mjs && node tools/build-cc-dashboard.mjs"
   },
   "keywords": [
     "agents",

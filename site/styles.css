@@ -74,6 +74,8 @@ section { margin: 34px 0 0; }
 .tile-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .tile-value { font: 600 22px/1.25 var(--mono); margin: 4px 0 2px; }
 .tile-sub { font-size: 12.5px; color: var(--muted); }
+.tile.alarm { border-left: 3px solid var(--over); }
+.tile.alarm .tile-value { color: var(--over); }
 
 .cap { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 8px; }
 .cap-head { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
@@ -99,6 +101,9 @@ section { margin: 34px 0 0; }
 .chart .axis-line { stroke: var(--line); stroke-width: 1.5; }
 .chart .axis, .chart .tick { fill: var(--muted); font: 10px var(--mono); }
 .chart .bar rect { fill: var(--bar); }
+/* A column that reaches the ceiling is drawn, not missing: "we asked for this
+   much and were refused" is a result, and it should not look like an absence. */
+.chart .bar.at rect { fill: var(--near); }
 .chart .bar.over rect { fill: var(--over); }
 .chart .capline { stroke: var(--near); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .chart .cost-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
@@ -110,6 +115,7 @@ section { margin: 34px 0 0; }
 .key i { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
 .k-bar { background: var(--bar); }
 .k-over { background: var(--over); }
+.k-at { background: var(--near); }
 .k-cap { background: transparent; border: 1.5px dashed var(--near); }
 .k-cost { background: var(--accent); border-radius: 999px; height: 3px; width: 14px; }
 
@@ -118,6 +124,12 @@ section { margin: 34px 0 0; }
 .a-cost { margin-left: auto; font: 600 15px var(--mono); }
 .a-bar { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 7px 0 5px; }
 .a-bar i { display: block; height: 100%; background: var(--bar); }
+.a-bar i.measured { background: var(--bar); }
+/* The unattributed bar is the finding, so it is the only striped one. */
+.a-bar i.unattributed { background: repeating-linear-gradient(45deg, var(--over), var(--over) 4px, transparent 4px, transparent 8px); }
+
+pre { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; overflow-x: auto; }
+pre code { font: 12.5px/1.6 var(--mono); color: var(--ink); }
 .a-meta { font-size: 12.5px; color: var(--muted); }
 
 .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }

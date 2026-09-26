@@ -114,6 +114,9 @@ const payload = {
     outcomes: t.outcomes,
     costPerOutcome: t.costPerOutcome,
   })),
+  // Operational counters ride through untouched: the page charts them, and it
+  // must not have to re-derive them from the cost rows to do it.
+  events: report.events,
   provenance: metrics.provenance,
   pricing: metrics.pricing,
 };
