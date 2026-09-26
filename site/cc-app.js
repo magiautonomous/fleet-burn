@@ -8,7 +8,10 @@
 // that says "no data yet" — so zero days, missing fields and a failed fetch all
 // land in the same explicit state, and no path in here can emit NaN.
 
-const DATA_URL = 'cc-data.json';
+// Resolved against the document (cc.html at the site root), not this module, so
+// the path has to name site/ explicitly. A bare "cc-data.json" would ask for
+// /cc-data.json and 404 — which is exactly what it did before a test said so.
+const DATA_URL = 'site/cc-data.json';
 const el = (id) => document.getElementById(id);
 
 const num = (v) => {

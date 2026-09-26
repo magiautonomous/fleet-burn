@@ -6,7 +6,10 @@
 // tools/build-dashboard.mjs running the real library over data/*.json. This
 // file only formats; it computes no costs of its own.
 
-const DATA_URL = 'data.json';
+// Resolved against the document, not this file: index.html sits at the site root
+// and the data lives beside this module in site/, so a bare "data.json" would
+// ask for /data.json and 404. A test resolves this path for real.
+const DATA_URL = 'site/data.json';
 const el = (id) => document.getElementById(id);
 
 // ---------------------------------------------------------------- formatting
