@@ -53,6 +53,33 @@ test('cost per outcome is omitted, not zeroed, when no completions are reported'
   assert.doesNotMatch(out, /per completed task/, 'a zero denominator must not print $0.00');
 });
 
+test('every leaderboard is sorted descending by the number in its heading', () => {
+  // Deliberately hand the report its tasks in a scrambled order: a top-N table
+  // that slices the input instead of a ranking is sorted-looking until the
+  // input happens to arrive pre-sorted, which is exactly when it ships.
+  const m = readMetricsFile(path.join(dataDir, 'fleet-sample.json'));
+  const scrambled = { ...m, tasks: [...m.tasks].reverse() };
+  const a = attribute(scrambled);
+  const b = attribute(m);
+  assert.notDeepEqual(
+    a.tasks.map((t) => t.id),
+    b.tasks.map((t) => t.id),
+    'the fixture really was reversed',
+  );
+  const out = renderReport(a, { top: 10 });
+  const block = out.slice(out.indexOf('tasks by cost'), out.indexOf('tasks by reads'));
+  const costs = [...block.matchAll(/\$\s*([\d,]+\.\d\d)/g)].map((m2) => Number(m2[1].replace(/,/g, '')));
+  assert.ok(costs.length > 1, 'the block has rows to compare');
+  for (let i = 1; i < costs.length; i++) {
+    assert.ok(costs[i] <= costs[i - 1], `row ${i} costs ${costs[i]} but row ${i - 1} cost ${costs[i - 1]}`);
+  }
+  const readBlock = out.slice(out.indexOf('tasks by reads'), out.indexOf('worst cost-per-outcome tasks'));
+  const reads = [...readBlock.matchAll(/^\s+\d+\.\s+([\d,]+)\s+reads/gm)].map((m2) => Number(m2[1].replace(/,/g, '')));
+  for (let i = 1; i < reads.length; i++) {
+    assert.ok(reads[i] <= reads[i - 1], `reads row ${i} is ${reads[i]} but row ${i - 1} is ${reads[i - 1]}`);
+  }
+});
+
 test('all four leaderboards are present with their headings', () => {
   const out = renderReport(attribute(twoDayFleet()));
   assert.match(out, /agents by cost/);

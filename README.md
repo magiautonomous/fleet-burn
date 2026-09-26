@@ -91,7 +91,7 @@ Or as a library / global bin:
 
 ```bash
 npm install -g fleet-burn   # provides the `fleet-burn` command
-npm test                    # 141 tests, no network, no services
+npm test                    # 149 tests, no network, no services
 ```
 
 ## Quickstart: meter your own fleet
